@@ -22,6 +22,36 @@ function rmr_render_field( WP_Post $post, $metabox ) {
 }
 
 /**
+ * Render a table with inputs and textareas to convert
+ * them in a collapsible fields in the frontend.
+ *
+ * @since 0.1.0
+ *
+ * @param array   $metabox   The metabox data.
+ * @param array   $value     The metabox current value.
+ */
+function rmr_render_collapse_field( $metabox, $value ) {
+	echo '<table class="wp-list-table widefat fixed striped users">';
+	echo '<thead>';
+	echo '<tr>';
+	echo '<th>Título</th>';
+	echo '<th>Contenido</th>';
+	echo '</tr> </thead>';
+	echo '<tbody id="rmr-results-tbody" data-metabox-id="' . $metabox['id'] . '">';
+
+	foreach ( $value['title'] as $index => $result ) {
+		echo '<tr>';
+		echo '<td> <input type="text" value="' . $result . '" name="' . $metabox['id'] . '[title][]" class="large-text widefat"> </td>';
+		echo '<td> <textarea name="' . $metabox['id'] . '[content][]" class="large-text widefat">' . $value['content'][ $index ] . '</textarea> </td>';
+		echo '</tr>';
+	}
+
+	echo '</tbody> </table>';
+	echo '<br>';
+	echo '<button type="button" class="button button-primary" onclick="RMR_addResult()">Add Result</button>';
+}
+
+/**
  * Render a text field.
  *
  * @since 0.1.0
