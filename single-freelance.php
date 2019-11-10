@@ -15,6 +15,7 @@ $industry    = get_post_meta( $post->ID, 'rmr_project_industry', true );
 $website     = get_post_meta( $post->ID, 'rmr_project_website', true );
 $duration    = get_post_meta( $post->ID, 'rmr_project_duration', true );
 $total_lines = get_post_meta( $post->ID, 'rmr_project_total_lines', true );
+$results     = get_post_meta( $post->ID, 'rmr_project_results', true );
 
 ?>
 
@@ -51,6 +52,18 @@ $total_lines = get_post_meta( $post->ID, 'rmr_project_total_lines', true );
 
 <section class="rmr-container rmr-mx-auto rmr-body">
 	<?php echo wpautop( $post->post_content ); ?>
+
+    <?php
+
+    foreach ( $results['title'] as $index => $title ) {
+        echo '<div class="rmr-collapsible">';
+        echo '<input type="radio" name="rmr-collapsibles" id="rmr-collapsible--' . $index . '">';
+        echo '<label for="rmr-collapsible--' . $index . '" class="rmr-collapsible__title">' . $title . '</label>';
+        echo '<div class="rmr-collapsible__content"> <p>' . $results['content'][ $index ] . '</p> </div>';
+        echo '</div>';
+    }
+
+    ?>
 </section>
 
 <?php get_footer();
