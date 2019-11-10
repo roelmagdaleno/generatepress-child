@@ -8,6 +8,7 @@ global $post;
 
 get_header();
 
+$logo_link   = get_post_meta( $post->ID, 'rmr_project_logo_link', true );
 $overview    = get_post_meta( $post->ID, 'rmr_project_overview', true );
 $location    = get_post_meta( $post->ID, 'rmr_project_location', true );
 $industry    = get_post_meta( $post->ID, 'rmr_project_industry', true );
@@ -20,7 +21,7 @@ $total_lines = get_post_meta( $post->ID, 'rmr_project_total_lines', true );
 <header class="rmr-customer__header">
 	<div class="rmr-container rmr-mx-auto rmr-no-margin--p">
 		<section class="rmr-project__header">
-			<img src="https://www.scadip.com/wp-content/uploads/2019/03/log1-180x82.png" alt="Scadip Logo">
+			<img src="<?php echo $logo_link; ?>" alt="Company Logo">
 
 			<p class="rmr-project__header-description">
                 <?php echo $overview; ?>

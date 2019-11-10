@@ -39,6 +39,7 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 			}
 
 			$metaboxes_ids = array(
+				'rmr_project_logo_link',
 				'rmr_project_overview',
 				'rmr_project_location',
 				'rmr_project_industry',
@@ -94,6 +95,12 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 		 */
 		public function add_metaboxes() {
 			$metaboxes = array(
+				'rmr_project_logo_link'   => array(
+					'title' => 'Logo Link',
+					'args'  => array(
+						'type' => 'text',
+					),
+				),
 				'rmr_project_overview'    => array(
 					'title' => 'Overview',
 					'args'  => array(

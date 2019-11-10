@@ -84,4 +84,5 @@ body .grid-container {
 
 .rmr-body h5 {
     font-weight: 600;
+    text-transform: uppercase;
 }
