@@ -78,7 +78,10 @@ body .grid-container {
     padding-top: 2rem;
 }
 
-.rmr-body h3,
-.rmr-body h5 {
+.rmr-body h3 {
     font-weight: bold;
+}
+
+.rmr-body h5 {
+    font-weight: 600;
 }
