@@ -19,6 +19,44 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'init', array( $this, 'setup_post_types' ) );
+			add_action( 'save_post', array( $this, 'save_metabox_data' ), 10, 2 );
+		}
+
+		/**
+		 * Save all metaboxes data only for those users
+		 * that can edit a post.
+		 *
+		 * @since 0.1.0
+		 *
+		 * @param int       $post_id   The current post id.
+		 * @param WP_Post   $post
+		 *
+		 * @return int|void
+		 */
+		public function save_metabox_data( $post_id, WP_Post $post ) {
+			if ( 'rmr_freelance' !== $post->post_type || ! current_user_can( 'edit_post', $post_id ) ) {
+				return $post_id;
+			}
+
+			$metaboxes_ids = array(
+				'rmr_project_location',
+				'rmr_project_industry',
+				'rmr_project_website',
+				'rmr_project_duration',
+				'rmr_project_total_lines',
+			);
+
+			foreach ( $metaboxes_ids as $metabox_id ) {
+				if ( 'revision' === $post->post_type ) {
+					break;
+				}
+
+				if ( ! isset( $_POST[ $metabox_id ] ) ) {
+					continue;
+				}
+
+				update_post_meta( $post_id, $metabox_id, sanitize_text_field( $_POST[ $metabox_id ] ) );
+			}
 		}
 
 		/**
@@ -53,6 +91,24 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 		 */
 		public function add_metaboxes() {
 			$metaboxes = array(
+				'rmr_project_location'    => array(
+					'title' => 'Location',
+					'args'  => array(
+						'type' => 'text',
+					),
+				),
+				'rmr_project_industry'    => array(
+					'title' => 'Industry',
+					'args'  => array(
+						'type' => 'text',
+					),
+				),
+				'rmr_project_website'    => array(
+					'title' => 'Website',
+					'args'  => array(
+						'type' => 'text',
+					),
+				),
 				'rmr_project_duration'    => array(
 					'title' => 'Project Duration',
 					'args'  => array(
