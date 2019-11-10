@@ -53,17 +53,33 @@ $results     = get_post_meta( $post->ID, 'rmr_project_results', true );
 <section class="rmr-container rmr-mx-auto rmr-body">
 	<?php echo wpautop( $post->post_content ); ?>
 
-    <?php
+    <div class="rmr-results">
+        <div class="rmr-collapse-data">
+	        <?php
 
-    foreach ( $results['title'] as $index => $title ) {
-        echo '<div class="rmr-collapsible">';
-        echo '<input type="radio" name="rmr-collapsibles" id="rmr-collapsible--' . $index . '">';
-        echo '<label for="rmr-collapsible--' . $index . '" class="rmr-collapsible__title">' . $title . '</label>';
-        echo '<div class="rmr-collapsible__content"> <p>' . $results['content'][ $index ] . '</p> </div>';
-        echo '</div>';
-    }
+	        foreach ( $results['title'] as $index => $title ) {
+		        echo '<div class="rmr-collapsible">';
+		        echo '<input type="radio" name="rmr-collapsibles" id="rmr-collapsible--' . $index . '">';
+		        echo '<label for="rmr-collapsible--' . $index . '" class="rmr-collapsible__title">' . $title . '</label>';
+		        echo '<div class="rmr-collapsible__content"> <p>' . $results['content'][ $index ] . '</p> </div>';
+		        echo '</div>';
+	        }
 
-    ?>
+	        ?>
+        </div>
+
+        <div class="rmr-results-totals">
+            <div class="rmr-total">
+                <p><?php echo $duration ?></p>
+                <p>DURACIÓN</p>
+            </div>
+
+            <div class="rmr-total">
+                <p><?php echo $total_lines ?></p>
+                <p>LÍNEAS DE CÓDIGO</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <?php get_footer();

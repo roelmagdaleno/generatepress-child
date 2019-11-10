@@ -12,7 +12,6 @@
 */
 body {
     background-color: #ffffff;
-    color: #1A202C;
     font-size: 18px;
 }
 
@@ -94,10 +93,10 @@ body .grid-container {
 .rmr-collapsible__title {
     background-color: #E2E8F0;
     border: none;
-    color: #1A202C;
+    box-sizing: border-box;
+    color: #4A5568;
     cursor: pointer;
     display: block;
-    font-size: 15px;
     outline: none;
     padding: 18px;
     text-align: left;
@@ -114,6 +113,7 @@ body .grid-container {
 
 .rmr-collapsible__content {
     background-color: #F7FAFC;
+    box-sizing: border-box;
     display: none;
     overflow: hidden;
     padding: 0 18px;
@@ -122,4 +122,41 @@ body .grid-container {
 
 .rmr-collapsible__content p {
     margin-top: 1.5rem;
+}
+
+.rmr-collapse-data {
+    flex: 3;
+}
+
+.rmr-results-totals {
+    flex: 1;
+    padding-left: 1rem;
+}
+
+.rmr-results {
+    display: flex;
+}
+
+.rmr-total {
+    background-color: #ffffff;
+    border: 1px solid #CBD5E0;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.rmr-total p {
+    margin: 0;
+}
+
+.rmr-total p:first-child {
+    color: #1a202c;
+    font-size: 1.875rem;
+}
+
+.rmr-total p:last-child {
+    color: #718096;
+    font-size: .875rem;
+    font-weight: bold;
 }
