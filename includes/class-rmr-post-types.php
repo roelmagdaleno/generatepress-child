@@ -39,6 +39,7 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 			}
 
 			$metaboxes_ids = array(
+				'rmr_project_results',
 				'rmr_project_logo_link',
 				'rmr_project_overview',
 				'rmr_project_location',
@@ -57,7 +58,8 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 					continue;
 				}
 
-				update_post_meta( $post_id, $metabox_id, sanitize_text_field( $_POST[ $metabox_id ] ) );
+				$metabox_value = is_array( $_POST[ $metabox_id ] ) ? $_POST[ $metabox_id ] : sanitize_text_field( $_POST[ $metabox_id ] );
+				update_post_meta( $post_id, $metabox_id, $metabox_value );
 			}
 		}
 
@@ -135,6 +137,12 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 					'title' => 'Total Lines of Code',
 					'args'  => array(
 						'type' => 'number',
+					),
+				),
+				'rmr_project_results'     => array(
+					'title' => 'Results',
+					'args'  => array(
+						'type' => 'collapse',
 					),
 				),
 			);
