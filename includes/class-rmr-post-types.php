@@ -34,7 +34,7 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 		 * @return int|void
 		 */
 		public function save_metabox_data( $post_id, WP_Post $post ) {
-			if ( 'rmr_freelance' !== $post->post_type || ! current_user_can( 'edit_post', $post_id ) ) {
+			if ( 'freelance' !== $post->post_type || ! current_user_can( 'edit_post', $post_id ) ) {
 				return $post_id;
 			}
 
@@ -72,11 +72,13 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 				'public'               => true,
 				'label'                => 'Freelance Works',
 				'menu_icon'            => 'dashicons-book',
+				'show_ui'              => true,
+				'show_in_menu'         => true,
 				'supports'             => array( 'title', 'editor' ),
 				'register_meta_box_cb' => array( $this, 'add_metaboxes' ),
 			);
 
-			register_post_type( 'rmr_freelance', $args );
+			register_post_type( 'freelance', $args );
 		}
 
 		/**
@@ -103,7 +105,7 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 						'type' => 'text',
 					),
 				),
-				'rmr_project_website'    => array(
+				'rmr_project_website'     => array(
 					'title' => 'Website',
 					'args'  => array(
 						'type' => 'text',
@@ -128,7 +130,7 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 					$metabox_id,
 					$metabox['title'],
 					'rmr_render_field',
-					'rmr_freelance',
+					'freelance',
 					'normal',
 					'default',
 					$metabox['args']
