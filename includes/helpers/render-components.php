@@ -37,18 +37,20 @@ function rmr_render_collapse_field( $metabox, $value ) {
 	echo '<th>Título</th>';
 	echo '<th>Contenido</th>';
 	echo '</tr> </thead>';
-	echo '<tbody id="rmr-results-tbody" data-metabox-id="' . $metabox['id'] . '">';
+	echo '<tbody id="rmr-results-for-' . $metabox['id'] . '" data-metabox-id="' . $metabox['id'] . '">';
 
-	foreach ( $value['title'] as $index => $result ) {
-		echo '<tr>';
-		echo '<td> <input type="text" value="' . $result . '" name="' . $metabox['id'] . '[title][]" class="large-text widefat"> </td>';
-		echo '<td> <textarea name="' . $metabox['id'] . '[content][]" class="large-text widefat">' . $value['content'][ $index ] . '</textarea> </td>';
-		echo '</tr>';
+	if ( isset( $value['title'] ) ) {
+		foreach ( $value['title'] as $index => $result ) {
+			echo '<tr>';
+			echo '<td> <input type="text" value="' . $result . '" name="' . $metabox['id'] . '[title][]" class="large-text widefat"> </td>';
+			echo '<td> <textarea name="' . $metabox['id'] . '[content][]" class="large-text widefat">' . $value['content'][ $index ] . '</textarea> </td>';
+			echo '</tr>';
+		}
 	}
 
 	echo '</tbody> </table>';
 	echo '<br>';
-	echo '<button type="button" class="button button-primary" onclick="RMR_addResult()">Add Result</button>';
+	echo '<button type="button" class="button button-primary" onclick="RMR_addResult(\'' . $metabox['id'] . '\')">Add Result</button>';
 }
 
 /**
