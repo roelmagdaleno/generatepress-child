@@ -6,9 +6,8 @@
  *
  * @since 0.1.0
  */
-function RMR_addResult() {
-    let resultsBodyEl = document.getElementById( 'rmr-results-tbody' );
-    let metaboxId     = resultsBodyEl.dataset.metaboxId;
+function RMR_addResult( metaboxId ) {
+    let resultsBodyEl = document.getElementById( `rmr-results-for-${metaboxId}` );
 
     let rowEl = '<tr>';
     rowEl    += `<td> <input type="text" name="${metaboxId}[title][]" class="large-text widefat" /> </td>`;
