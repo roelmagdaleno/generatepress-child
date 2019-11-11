@@ -68,15 +68,21 @@ $results     = get_post_meta( $post->ID, 'rmr_project_results', true );
 	        ?>
         </div>
 
-        <div class="rmr-results-totals">
-            <div class="rmr-total">
-                <p><?php echo $duration ?></p>
-                <p>DURACIÓN</p>
+        <div class="rmr-results--right">
+            <div class="rmr-results-totals">
+                <div class="rmr-total">
+                    <p><?php echo $duration ?></p>
+                    <p>DURACIÓN</p>
+                </div>
+
+                <div class="rmr-total">
+                    <p><?php echo $total_lines ?></p>
+                    <p>LÍNEAS DE CÓDIGO</p>
+                </div>
             </div>
 
-            <div class="rmr-total">
-                <p><?php echo $total_lines ?></p>
-                <p>LÍNEAS DE CÓDIGO</p>
+            <div class="rmr-results-technologies">
+                hola
             </div>
         </div>
     </div>

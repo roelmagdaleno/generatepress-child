@@ -129,13 +129,13 @@ body .grid-container {
     flex: 3;
 }
 
-.rmr-results-totals {
-    flex: 1;
-    padding-left: 1rem;
-}
-
 .rmr-results {
     display: flex;
+}
+
+.rmr-results--right {
+    flex: 1;
+    padding-left: 1rem;
 }
 
 .rmr-total {
@@ -145,6 +145,10 @@ body .grid-container {
     margin-bottom: 1rem;
     padding: 1rem;
     text-align: center;
+}
+
+.rmr-total:last-child {
+    margin-bottom: 0;
 }
 
 .rmr-total p {
@@ -160,4 +164,13 @@ body .grid-container {
     color: #718096;
     font-size: .875rem;
     font-weight: bold;
+}
+
+.rmr-results-totals {
+    border-bottom: 2px solid #E2E8F0;
+    padding-bottom: 1rem;
+}
+
+.rmr-results-technologies {
+    padding-top: 1rem;
 }
