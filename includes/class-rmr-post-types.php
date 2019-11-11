@@ -39,6 +39,7 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 			}
 
 			$metaboxes_ids = array(
+				'rmr_project_technologies',
 				'rmr_project_results',
 				'rmr_project_logo_link',
 				'rmr_project_overview',
@@ -97,49 +98,55 @@ if ( ! class_exists( 'RMR_Post_Types' ) ) {
 		 */
 		public function add_metaboxes() {
 			$metaboxes = array(
-				'rmr_project_logo_link'   => array(
+				'rmr_project_technologies' => array(
+					'title' => 'Technologies Used',
+					'args'  => array(
+						'type' => 'collapse',
+					),
+				),
+				'rmr_project_logo_link'    => array(
 					'title' => 'Logo Link',
 					'args'  => array(
 						'type' => 'text',
 					),
 				),
-				'rmr_project_overview'    => array(
+				'rmr_project_overview'     => array(
 					'title' => 'Overview',
 					'args'  => array(
 						'type' => 'text',
 					),
 				),
-				'rmr_project_location'    => array(
+				'rmr_project_location'     => array(
 					'title' => 'Location',
 					'args'  => array(
 						'type' => 'text',
 					),
 				),
-				'rmr_project_industry'    => array(
+				'rmr_project_industry'     => array(
 					'title' => 'Industry',
 					'args'  => array(
 						'type' => 'text',
 					),
 				),
-				'rmr_project_website'     => array(
+				'rmr_project_website'      => array(
 					'title' => 'Website',
 					'args'  => array(
 						'type' => 'text',
 					),
 				),
-				'rmr_project_duration'    => array(
+				'rmr_project_duration'     => array(
 					'title' => 'Project Duration',
 					'args'  => array(
 						'type' => 'text',
 					),
 				),
-				'rmr_project_total_lines' => array(
+				'rmr_project_total_lines'  => array(
 					'title' => 'Total Lines of Code',
 					'args'  => array(
 						'type' => 'number',
 					),
 				),
-				'rmr_project_results'     => array(
+				'rmr_project_results'      => array(
 					'title' => 'Results',
 					'args'  => array(
 						'type' => 'collapse',
