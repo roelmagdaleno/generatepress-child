@@ -8,14 +8,15 @@ global $post;
 
 get_header();
 
-$logo_link   = get_post_meta( $post->ID, 'rmr_project_logo_link', true );
-$overview    = get_post_meta( $post->ID, 'rmr_project_overview', true );
-$location    = get_post_meta( $post->ID, 'rmr_project_location', true );
-$industry    = get_post_meta( $post->ID, 'rmr_project_industry', true );
-$website     = get_post_meta( $post->ID, 'rmr_project_website', true );
-$duration    = get_post_meta( $post->ID, 'rmr_project_duration', true );
-$total_lines = get_post_meta( $post->ID, 'rmr_project_total_lines', true );
-$results     = get_post_meta( $post->ID, 'rmr_project_results', true );
+$logo_link    = get_post_meta( $post->ID, 'rmr_project_logo_link', true );
+$overview     = get_post_meta( $post->ID, 'rmr_project_overview', true );
+$location     = get_post_meta( $post->ID, 'rmr_project_location', true );
+$industry     = get_post_meta( $post->ID, 'rmr_project_industry', true );
+$website      = get_post_meta( $post->ID, 'rmr_project_website', true );
+$duration     = get_post_meta( $post->ID, 'rmr_project_duration', true );
+$total_lines  = get_post_meta( $post->ID, 'rmr_project_total_lines', true );
+$results      = get_post_meta( $post->ID, 'rmr_project_results', true );
+$technologies = get_post_meta( $post->ID, 'rmr_project_technologies', true );
 
 ?>
 
@@ -82,7 +83,20 @@ $results     = get_post_meta( $post->ID, 'rmr_project_results', true );
             </div>
 
             <div class="rmr-results-technologies">
-                hola
+                <ul>
+
+                <?php
+
+                foreach ( $technologies['title'] as $index => $title ) {
+                    echo '<li class="rmr-technology__li">';
+                    echo '<span class="rmr-technology is-' . strtolower( $title ) . '"></span>';
+                    echo $title;
+                    echo '<span class="rmr-technology__percentage">' . $technologies['content'][ $index ] . '%</span>';
+                    echo '</li>';
+                }
+
+                ?>
+                </ul>
             </div>
         </div>
     </div>

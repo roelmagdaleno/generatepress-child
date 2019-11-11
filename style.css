@@ -174,3 +174,50 @@ body .grid-container {
 .rmr-results-technologies {
     padding-top: 1rem;
 }
+
+.rmr-results-technologies ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 3rem;
+}
+
+.rmr-technology__li {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.rmr-technology__li:first-child {
+    padding-top: 0;
+}
+
+.rmr-technology__li:last-child {
+    padding-bottom: 0;
+}
+
+.rmr-technology {
+    border-radius: 50%;
+    display: inline-block;
+    height: 15px;
+    margin-right: 10px;
+    width: 15px;
+}
+
+.rmr-technology.is-php {
+    background-color: #4f5d95;
+}
+
+.rmr-technology.is-javascript {
+    background-color: #f1e05a;
+}
+
+.rmr-technology.is-css {
+    background-color: #563d7c;
+}
+
+.rmr-technology.is-html {
+    background-color: #e34c26;
+}
+
+.rmr-technology__percentage {
+    float: right;
+}
