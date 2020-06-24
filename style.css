@@ -7,3 +7,30 @@
  Template:     generatepress
  Version:      0.1.0
 */
+@font-face {
+    font-family: 'Asap';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('assets/fonts/asap/asap-v11-latin-regular.eot');
+    src: local('Asap Regular'), local('Asap-Regular'),
+    url('assets/fonts/asap/asap-v11-latin-regular.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/asap/asap-v11-latin-regular.woff2') format('woff2'),
+    url('assets/fonts/asap/asap-v11-latin-regular.woff') format('woff'),
+    url('assets/fonts/asap/asap-v11-latin-regular.ttf') format('truetype'),
+    url('assets/fonts/asap/asap-v11-latin-regular.svg#Asap') format('svg');
+}
+
+@font-face {
+    font-family: 'Asap';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('assets/fonts/asap/asap-v11-latin-700.eot');
+    src: local('Asap Bold'), local('Asap-Bold'),
+    url('assets/fonts/asap/asap-v11-latin-700.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/asap/asap-v11-latin-700.woff2') format('woff2'),
+    url('assets/fonts/asap/asap-v11-latin-700.woff') format('woff'),
+    url('assets/fonts/asap/asap-v11-latin-700.ttf') format('truetype'),
+    url('assets/fonts/asap/asap-v11-latin-700.svg#Asap') format('svg');
+}

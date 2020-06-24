@@ -5,6 +5,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
+add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
+
+/**
+ * Load local fonts and use them in theme instead of
+ * using Google Fonts CDN.
+ *
+ * We're using these fonts locally:
+ *
+ * - Asap (blog and pages)
+ * - JetBrains Mono (for code editor)
+ *
+ * @since  0.1.0
+ *
+ * @param  array   $fonts   The current default fonts.
+ * @return array            The fonts with our custom ones.
+ */
+function rmr_load_local_fonts( $fonts ) {
+	$fonts[] = 'Asap';
+	$fonts[] = 'JetBrains Mono';
+
+	return $fonts;
+}
 
 /**
  * Lazy Load Header Logo.
