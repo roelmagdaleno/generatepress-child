@@ -18,8 +18,8 @@ add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 )
  * @since 0.1.0
  */
 function rmr_preload_fonts() {
-	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
-	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap-v11-latin-700.woff2" as="font" type="font/woff2" crossorigin>';
+	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
+	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-700.woff2" as="font" type="font/woff2" crossorigin>';
 }
 
 /**
