@@ -4,8 +4,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+require_once 'includes/constants.php';
+
+add_action( 'wp_enqueue_scripts', 'rmr_load_custom_code_fonts' );
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
+
+/**
+ * Load the "JetBrains Mono" font in single posts and only
+ * if the post contains the "core/code" Gutenberg block.
+ *
+ * @since 0.1.0
+ */
+function rmr_load_custom_code_fonts() {
+	if ( ! is_single() || ! has_block( 'core/code' ) ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'rmr-single.css',
+		get_stylesheet_directory_uri() . '/assets/css/single.css',
+		null,
+		RMR_VERSION
+	);
+}
 
 /**
  * Load local fonts and use them in theme instead of
