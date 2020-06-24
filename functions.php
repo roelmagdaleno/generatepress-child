@@ -11,6 +11,12 @@ add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' 
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
 
+/**
+ * Add "preload" links in <head> HTML tag.
+ * These lines will help to reduce GPSI scores.
+ *
+ * @since 0.1.0
+ */
 function rmr_preload_fonts() {
 	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
 	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap-v11-latin-700.woff2" as="font" type="font/woff2" crossorigin>';
