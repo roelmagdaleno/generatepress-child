@@ -34,3 +34,8 @@
     url('assets/fonts/asap/asap-v11-latin-700.ttf') format('truetype'),
     url('assets/fonts/asap/asap-v11-latin-700.svg#Asap') format('svg');
 }
+
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: "JetBrains Mono", Hack, serif;
+}

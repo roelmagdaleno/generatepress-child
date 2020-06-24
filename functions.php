@@ -6,10 +6,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once 'includes/constants.php';
 
+add_action( 'wp_head', 'rmr_preload_fonts' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
-add_action( 'wp_enqueue_scripts', 'rmr_load_custom_code_fonts' );
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
+
+function rmr_preload_fonts() {
+	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
+	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap-v11-latin-700.woff2" as="font" type="font/woff2" crossorigin>';
+}
 
 /**
  * Load ASAP fonts in Gutenberg editor.
@@ -22,25 +27,6 @@ add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 )
  */
 function rmr_load_fonts_in_gutenberg_editor() {
 	wp_enqueue_style( 'rmr-styles', get_stylesheet_uri() );
-}
-
-/**
- * Load the "JetBrains Mono" font in single posts and only
- * if the post contains the "core/code" Gutenberg block.
- *
- * @since 0.1.0
- */
-function rmr_load_custom_code_fonts() {
-	if ( ! is_single() || ! has_block( 'core/code' ) ) {
-		return;
-	}
-
-	wp_enqueue_style(
-		'rmr-single.css',
-		get_stylesheet_directory_uri() . '/assets/css/single.css',
-		null,
-		RMR_VERSION
-	);
 }
 
 /**
