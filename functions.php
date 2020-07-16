@@ -7,17 +7,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once 'includes/constants.php';
 
 add_action( 'wp_head', 'rmr_preload_fonts' );
+add_action( 'wp_enqueue_scripts', 'rmr_load_custom_code_fonts' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
+
+/**
+ * Load the "JetBrains Mono" font in single posts and only
+ * if the post contains the "core/code" Gutenberg block.
+ *
+ * @since 0.1.1
+ */
+function rmr_load_custom_code_fonts() {
+	if ( ! is_single() || ! has_block( 'core/code' ) ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'rmr-single.css',
+		get_stylesheet_directory_uri() . '/assets/css/single.css',
+		null,
+		RMR_VERSION
+	);
+}
 
 /**
  * Add "preload" links in <head> HTML tag.
  * These lines will help to reduce GPSI scores.
  *
  * @since 0.1.0
+ * @since 0.1.1   Preload JetBrains Mono font.
  */
 function rmr_preload_fonts() {
+	if ( is_single() || has_block( 'core/code' ) ) {
+		echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>';
+	}
+
 	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
 	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-700.woff2" as="font" type="font/woff2" crossorigin>';
 	echo '<link rel="preload" href="https://roelmagdaleno.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" as="script">';
