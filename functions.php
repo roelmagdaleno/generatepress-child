@@ -11,6 +11,35 @@ add_action( 'wp_enqueue_scripts', 'rmr_load_custom_code_fonts' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
+add_action( 'init', 'rmr_disable_emojis' );
+
+/**
+ * Disable emojis from the entire site.
+ *
+ * @since 0.1.2
+ */
+function rmr_disable_emojis() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	add_filter( 'tiny_mce_plugins', 'rmr_disable_emojis_tinymce' );
+}
+
+/**
+ * Disable emojis for tinyMCE editors.
+ *
+ * @since  0.1.2
+ *
+ * @param  array   $plugins   The tinyMCE plugins.
+ * @return array              The tinyMCE without the "wpemoji" script.
+ */
+function rmr_disable_emojis_tinymce( $plugins ) {
+	return is_array( $plugins ) ? array_diff( $plugins, array( 'wpemoji' ) ) : array();
+}
 
 /**
  * Load the "JetBrains Mono" font in single posts and only
