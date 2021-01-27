@@ -3,12 +3,16 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/jetbrains-mono/JetBrainsMono-Regular.eot');
-    src: local('JetBrains Mono Regular'), local('JetBrains-Mono-Regular'),
-    url('../fonts/jetbrains-mono/JetBrainsMono-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2'),
-    url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff') format('woff'),
-    url('../fonts/jetbrains-mono/JetBrainsMono-Regular.ttf') format('truetype');
+    src: url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff') format('woff');
+}
+
+code {
+    background: #f3f4f5;
+    border-radius: 2px;
+    color: #23282d;
+    font-size: inherit;
+    padding: 2px;
 }
 
 code[class*="language-"],

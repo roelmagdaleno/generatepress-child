@@ -68,13 +68,11 @@ function rmr_load_custom_code_fonts() {
  * @since 0.1.1   Preload JetBrains Mono font.
  */
 function rmr_preload_fonts() {
-	if ( is_single() || has_block( 'core/code' ) ) {
+	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
+
+	if ( is_single() && has_block( 'core/code' ) ) {
 		echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>';
 	}
-
-	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
-	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-700.woff2" as="font" type="font/woff2" crossorigin>';
-	echo '<link rel="preload" href="https://roelmagdaleno.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp" as="script">';
 }
 
 /**
