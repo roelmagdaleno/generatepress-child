@@ -6,7 +6,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once 'includes/constants.php';
 
-add_action( 'wp_head', 'rmr_preload_fonts' );
+/**
+ * For some reason we cannot remove the "generate_meta_viewport" action hook
+ * so we have to return null in the filter and put the meta viewport in our header.php.
+ *
+ * @since 0.1.2
+ */
+add_filter( 'generate_meta_viewport', '__return_null' );
+
+remove_action( 'wp_head', '_wp_render_title_tag', 1 );
+remove_action( 'wp_head', 'wp_resource_hints', 2 );
+remove_action( 'wp_head', 'feed_links', 2 );
+
+add_action( 'wp_head', 'feed_links' );
+add_action( 'wp_head', 'rmr_preload_fonts', 8 );
 add_action( 'wp_enqueue_scripts', 'rmr_load_custom_code_fonts' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
@@ -48,6 +61,9 @@ function rmr_disable_emojis_tinymce( $plugins ) {
  * @since 0.1.1
  */
 function rmr_load_custom_code_fonts() {
+	wp_deregister_script( 'wp-embed' );
+	wp_dequeue_style( 'wp-block-library' );
+
 	if ( ! is_single() || ! has_block( 'core/code' ) ) {
 		return;
 	}
@@ -68,7 +84,9 @@ function rmr_load_custom_code_fonts() {
  * @since 0.1.1   Preload JetBrains Mono font.
  */
 function rmr_preload_fonts() {
-	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/asap/asap-v11-latin-regular.woff2" as="font" type="font/woff2" crossorigin>';
+	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>';
+
+	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/inter/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>';
 
 	if ( is_single() && has_block( 'core/code' ) ) {
 		echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>';
@@ -103,7 +121,7 @@ function rmr_load_fonts_in_gutenberg_editor() {
  * @return array            The fonts with our custom ones.
  */
 function rmr_load_local_fonts( $fonts ) {
-	$fonts[] = 'Asap';
+	$fonts[] = 'Inter';
 	$fonts[] = 'JetBrains Mono';
 
 	return $fonts;

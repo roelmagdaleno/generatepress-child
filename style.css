@@ -8,16 +8,74 @@
  Version:      0.1.2
 */
 @font-face {
-    font-family: 'Asap';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('assets/fonts/asap/asap-v11-latin-regular.woff2') format('woff2'),
-    url('assets/fonts/asap/asap-v11-latin-regular.woff') format('woff');
+    src: url('assets/fonts/inter/Inter-Regular.woff2') format('woff2'),
+    url('assets/fonts/inter/Inter-Regular.woff') format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('assets/fonts/inter/Inter-Bold.woff2') format('woff2'),
+    url('assets/fonts/inter/Inter-Regular.woff') format('woff');
+}
+
+body {
+    font-family: Inter, sans-serif;
 }
 
 .wp-block-image figcaption {
     color: #555d66;
     font-size: 13px;
     text-align: center;
+}
+
+.monsterinsights-widget-popular-posts.monsterinsights-popular-posts-styled {
+    margin: 0;
+}
+
+.monsterinsights-widget-popular-posts-list li {
+    padding: 0 0 12px 0 !important;
+}
+
+.monsterinsights-widget-popular-posts-list li:last-child {
+    margin: 0;
+    padding: 0 !important;
+}
+
+.monsterinsights-widget-popular-posts.monsterinsights-popular-posts-styled .monsterinsights-widget-popular-posts-list a {
+    font-weight: normal;
+}
+
+.widget-area h5 {
+    margin: 0;
+}
+
+.widget-area h5 a {
+    color: #111827;
+}
+
+.rmr_social-networks {
+    display: flex;
+}
+
+.rmr_social-networks a {
+    display: block;
+    height: 32px;
+    margin-right: 15px;
+}
+
+.rmr_social-networks a:last-child {
+    margin-right: 0;
+}
+
+.rmr_social-networks a svg {
+    color: #000000;
+    width: 32px;
+    height: 32px;
 }

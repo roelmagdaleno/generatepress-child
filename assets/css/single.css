@@ -9,10 +9,10 @@
 
 code {
     background: #f3f4f5;
-    border-radius: 2px;
+    border-radius: 3px;
     color: #23282d;
     font-size: inherit;
-    padding: 2px;
+    padding: 2px 5px;
 }
 
 code[class*="language-"],
