@@ -20,11 +20,28 @@ remove_action( 'wp_head', 'feed_links', 2 );
 
 add_action( 'wp_head', 'feed_links' );
 add_action( 'wp_head', 'rmr_preload_fonts', 8 );
-add_action( 'wp_enqueue_scripts', 'rmr_load_custom_code_fonts' );
+add_action( 'wp_enqueue_scripts', 'rmr_load_custom_assets' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
+add_action( 'generate_menu_bar_items', 'rmr_add_dark_mode_button', 20 );
 add_action( 'init', 'rmr_disable_emojis' );
+
+/**
+ * Add the dark mode button into the header navigation.
+ *
+ * @since 0.1.2
+ */
+function rmr_add_dark_mode_button() {
+	$moon = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+
+	$sun = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+
+	echo '<button type="button" class="rmr__dark-mode__btn" onclick="window.rmr.darkMode.add()">';
+	echo $moon;
+	echo $sun;
+	echo '</button>';
+}
 
 /**
  * Disable emojis from the entire site.
@@ -55,14 +72,24 @@ function rmr_disable_emojis_tinymce( $plugins ) {
 }
 
 /**
- * Load the "JetBrains Mono" font in single posts and only
- * if the post contains the "core/code" Gutenberg block.
+ * Load the "JetBrains Mono" font in single posts and only if the post contains
+ * the "core/code" Gutenberg block.
  *
  * @since 0.1.1
  */
-function rmr_load_custom_code_fonts() {
+function rmr_load_custom_assets() {
 	wp_deregister_script( 'wp-embed' );
 	wp_dequeue_style( 'wp-block-library' );
+
+	$uri = get_stylesheet_directory_uri();
+
+	wp_enqueue_script(
+		'rmr-dark-mode',
+		$uri . '/assets/js/dark-mode.js',
+		null,
+		RMR_VERSION,
+		true
+	);
 
 	if ( ! is_single() || ! has_block( 'core/code' ) ) {
 		return;
@@ -70,15 +97,14 @@ function rmr_load_custom_code_fonts() {
 
 	wp_enqueue_style(
 		'rmr-single.css',
-		get_stylesheet_directory_uri() . '/assets/css/single.css',
+		$uri . '/assets/css/single.css',
 		null,
 		RMR_VERSION
 	);
 }
 
 /**
- * Add "preload" links in <head> HTML tag.
- * These lines will help to reduce GPSI scores.
+ * Add "preload" links in <head> HTML tag. These lines will help to reduce GPSI scores.
  *
  * @since 0.1.0
  * @since 0.1.1   Preload JetBrains Mono font.
@@ -107,9 +133,7 @@ function rmr_load_fonts_in_gutenberg_editor() {
 }
 
 /**
- * Load local fonts and use them in theme instead of
- * using Google Fonts CDN.
- *
+ * Load local fonts and use them in theme instead of using Google Fonts CDN.
  * We're using these fonts locally:
  *
  * - Asap (blog and pages)
