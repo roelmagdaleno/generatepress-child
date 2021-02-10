@@ -79,7 +79,6 @@ function rmr_disable_emojis_tinymce( $plugins ) {
  */
 function rmr_load_custom_assets() {
 	wp_deregister_script( 'wp-embed' );
-	wp_dequeue_style( 'wp-block-library' );
 
 	$uri = get_stylesheet_directory_uri();
 
