@@ -116,11 +116,6 @@ body.dark-mode pre[class*=language-] code {
     background: #08090a;
 }
 
-body.dark-mode code {
-    background-color: #CBD5E1;
-    color: #08090a;
-}
-
 body.dark-mode .main-title a {
     color: #fff;
 }
