@@ -67,3 +67,37 @@ figcaption {
     width: 32px;
     height: 32px;
 }
+
+header.site-header {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.is-right-sidebar {
+    border-left: 1px solid #e5e7eb;
+}
+
+.inside-right-sidebar {
+    height: 100%;
+}
+
+.widget_a2a_share_save_widget {
+    position: sticky;
+    top: 50px;
+}
+
+#custom_html-3 {
+    position: sticky;
+    top: 230px;
+}
+
+a.wpp-post-title {
+    font-size: 16px;
+}
+
+.wpp-list li {
+    margin-bottom: 2rem !important;
+}
+
+h2 code {
+    font-size: 32px;
+}
