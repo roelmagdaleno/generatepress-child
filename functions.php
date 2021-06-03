@@ -82,6 +82,13 @@ function rmr_load_custom_assets() {
 
 	$uri = get_stylesheet_directory_uri();
 
+	wp_enqueue_style(
+		'rmr-dark-mode-styles',
+		$uri . '/assets/css/dark-mode.css',
+		null,
+		RMR_VERSION
+	);
+
 	wp_enqueue_script(
 		'rmr-dark-mode',
 		$uri . '/assets/js/dark-mode.js',
