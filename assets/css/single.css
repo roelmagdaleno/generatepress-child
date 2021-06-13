@@ -19,3 +19,100 @@ code[class*="language-"],
 pre[class*="language-"] {
     font-family: "JetBrains Mono", Hack, serif;
 }
+
+.rmr-related-post__title {
+    font-weight: bold;
+}
+
+.rmr-related-posts {
+    clear: both;
+    margin: 0;
+    padding: 30px;
+}
+
+.rmr-related-posts:before,
+.rmr-related-posts:after {
+    content: "";
+    display: table;
+}
+
+.rmr-related-posts:after {
+    clear: both;
+}
+
+.rmr-related-post {
+    border-radius: .5rem;
+    border: 1px solid #e5e7eb;
+    display: block;
+    float: left;
+    height: 350px;
+    /*margin: 1% 0 1% 1.6%;*/
+    margin: 0 0 5% 0;
+    padding: 15px;
+    /*width: 32.26%;*/
+    width: 100%;
+}
+
+.rmr-related-post:last-child {
+    margin-bottom: 0;
+}
+
+.rmr-related-post:first-child {
+    margin-left: 0;
+}
+
+.rmr-related-post__main-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.rmr-related-post__title a {
+    color: #111827;
+}
+
+.rmr-related-post__title a:hover {
+    color: #111827;
+}
+
+.rmr-related-posts__wrap {
+    margin: 40px 0;
+}
+
+.rmr-related-post__featured-image img {
+    border-radius: 4px;
+    height: 230px;
+}
+
+.comments-area {
+    width: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .rmr-related-post {
+        width: 49%;
+        margin-left: 1%;
+        margin-bottom: 1%;
+    }
+
+    .rmr-related-post:nth-child(3n) {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .comments-area {
+        width: 70%;
+    }
+
+    .rmr-related-posts {
+        padding: 0;
+    }
+
+    .rmr-related-post {
+        width: 32.26%;
+    }
+
+    .rmr-related-post:nth-child(3n) {
+        margin-left: 1%;
+    }
+}

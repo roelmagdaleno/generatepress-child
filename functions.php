@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once 'includes/constants.php';
+require_once 'includes/related-posts.php';
 
 /**
  * For some reason we cannot remove the "generate_meta_viewport" action hook
@@ -25,11 +26,20 @@ add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' 
 add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
 add_action( 'generate_menu_bar_items', 'rmr_add_dark_mode_button', 20 );
+add_action( 'rmr_generatepress_after_site_content', 'generate_do_comments_template', 15 );
 add_action( 'init', 'rmr_disable_emojis' );
+add_action( 'wp_loaded', 'rmr_wp_loaded' );
+
+/**
+ * Set functions after WordPress is loaded.
+ * @since 0.1.5
+ */
+function rmr_wp_loaded() {
+	remove_action( 'generate_after_do_template_part', 'generate_do_comments_template', 15 );
+}
 
 /**
  * Add the dark mode button into the header navigation.
- *
  * @since 0.1.2
  */
 function rmr_add_dark_mode_button() {
@@ -45,7 +55,6 @@ function rmr_add_dark_mode_button() {
 
 /**
  * Disable emojis from the entire site.
- *
  * @since 0.1.2
  */
 function rmr_disable_emojis() {
@@ -97,7 +106,7 @@ function rmr_load_custom_assets() {
 		true
 	);
 
-	if ( ! is_single() || ! has_block( 'core/code' ) ) {
+	if ( ! is_single() ) {
 		return;
 	}
 
