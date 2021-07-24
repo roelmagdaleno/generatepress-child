@@ -23,12 +23,35 @@ add_action( 'wp_head', 'feed_links' );
 add_action( 'wp_head', 'rmr_preload_fonts', 8 );
 add_action( 'wp_enqueue_scripts', 'rmr_load_custom_assets' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
-add_filter( 'generate_logo_attributes', 'rmr_lazy_logo', 10, 1 );
 add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
 add_action( 'generate_menu_bar_items', 'rmr_add_dark_mode_button', 20 );
 add_action( 'rmr_generatepress_after_site_content', 'generate_do_comments_template', 15 );
 add_action( 'init', 'rmr_disable_emojis' );
 add_action( 'wp_loaded', 'rmr_wp_loaded' );
+add_filter( 'upload_dir', 'rmr_remove_uploads_string' );
+
+/**
+ * Remove the "uploads" string from the path and url directory.
+ *
+ * Roel do this because he's using the S3 Uploads plugin and the
+ * CDN rewrite constant didn't remove the "uploads" string.
+ *
+ * @since  0.1.6
+ *
+ * @link   https://github.com/humanmade/S3-Uploads
+ * @link   https://github.com/humanmade/S3-Uploads/issues/505
+ *
+ * @param  array   $dirs   The uploads path and url directory.
+ * @return array           The uploads path and url without "uploads" string.
+ */
+function rmr_remove_uploads_string( $dirs ) {
+	$dirs['baseurl'] = S3_UPLOADS_BUCKET_URL;
+	$dirs['basedir'] = ABSPATH . 'wp-content'; // this would usually be wp-content/uploads
+	$dirs['path']    = $dirs['basedir'] . $dirs['subdir'];
+	$dirs['url']     = $dirs['baseurl'] . $dirs['subdir'];
+
+	return $dirs;
+}
 
 /**
  * Set functions after WordPress is loaded.
@@ -164,29 +187,4 @@ function rmr_load_local_fonts( $fonts ) {
 	$fonts[] = 'JetBrains Mono';
 
 	return $fonts;
-}
-
-/**
- * Lazy Load Header Logo.
- * We're lazy loading the logo by using "WP Bullet Lazy Load".
- *
- * We have to add the "wp-bullet-lazy-load" class, add the "data-src"
- * attribute and remove "src".
- *
- * It's recommended to add "width" and "height" attributes to keep dimensions.
- *
- * @since  0.1.0
- *
- * @param  array   $attr   The logo attributes.
- * @return array           The logo with lazy load attributes.
- */
-function rmr_lazy_logo( $attr ) {
-	$attr['data-src'] = $attr['src'];
-	$attr['class']    = $attr['class'] . ' ' . 'wp-bullet-lazy-load';
-	$attr['width']    = '40';
-	$attr['height']   = '60';
-
-	unset( $attr['src'] );
-
-	return $attr;
 }
