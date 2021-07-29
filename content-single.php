@@ -76,7 +76,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="rmr-author-bio">
 				<div class="rmr-author-bio__avatar">
-					<img src="https://cdn.roelmagdaleno.com/assets/2019/08/ZHFS36po_400x400.jpg" alt="Roel Magdaleno">
+					<img src="https://cdn.roelmagdaleno.com/assets/2019/08/ZHFS36po_400x400.jpg"
+						 loading="lazy"
+						 alt="Roel Magdaleno"
+					>
 				</div>
 				<div class="rmr-author-bio__bio">
 					<strong class="rmr-author-bio__written-by">
