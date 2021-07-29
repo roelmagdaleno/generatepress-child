@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="preconnect" href="https://cdn.roelmagdaleno.com">
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RWJKXZ0P0L"></script>
 	<script>
