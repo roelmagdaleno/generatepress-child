@@ -45,6 +45,10 @@ add_filter( 'upload_dir', 'rmr_remove_uploads_string' );
  * @return array           The uploads path and url without "uploads" string.
  */
 function rmr_remove_uploads_string( $dirs ) {
+	if ( ! defined( 'S3_UPLOADS_BUCKET_URL' ) ) {
+		return $dirs;
+	}
+
 	$dirs['baseurl'] = S3_UPLOADS_BUCKET_URL;
 	$dirs['basedir'] = ABSPATH . 'wp-content'; // this would usually be wp-content/uploads
 	$dirs['path']    = $dirs['basedir'] . $dirs['subdir'];
