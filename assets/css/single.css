@@ -42,15 +42,13 @@ pre[class*="language-"] {
 }
 
 .rmr-related-post {
-    border-radius: .5rem;
+    border-radius: 4px;
     border: 1px solid #e5e7eb;
     display: block;
     float: left;
     height: 350px;
-    /*margin: 1% 0 1% 1.6%;*/
     margin: 0 0 5% 0;
     padding: 15px;
-    /*width: 32.26%;*/
     width: 100%;
 }
 
