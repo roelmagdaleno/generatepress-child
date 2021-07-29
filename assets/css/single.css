@@ -88,6 +88,33 @@ pre[class*="language-"] {
     width: auto;
 }
 
+.rmr-author-bio {
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    font-size: 17px;
+    padding: 20px;
+}
+
+.rmr-author-bio__avatar {
+    margin-right: 20px;
+}
+
+.rmr-author-bio__avatar img {
+    border-radius: 50%;
+    width: 450px;
+}
+
+.rmr-author-bio__bio .rmr-author-bio__written-by {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.rmr-author-bio__bio p {
+    margin: 0;
+}
+
 @media only screen and (min-width: 768px) {
     .rmr-related-post {
         width: 49%;
