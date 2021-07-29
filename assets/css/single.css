@@ -21,6 +21,10 @@ pre[class*="language-"] {
     font-family: "JetBrains Mono", Hack, serif;
 }
 
+figcaption {
+    font-size: 20px !important;
+}
+
 .rmr-related-post__title {
     font-weight: bold;
 }
