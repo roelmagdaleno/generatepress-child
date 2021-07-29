@@ -94,6 +94,7 @@ pre[class*="language-"] {
     border: 1px solid #e5e7eb;
     display: flex;
     font-size: 17px;
+    line-height: 1.5;
     padding: 20px;
 }
 
