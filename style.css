@@ -99,5 +99,5 @@ a.wpp-post-title {
 }
 
 h2 code {
-    font-size: 32px;
+    font-size: 32px !important;
 }
