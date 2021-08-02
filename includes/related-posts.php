@@ -27,7 +27,7 @@ function rmr_render_related_posts() {
 	?>
 
 	<div class="rmr-related-posts__wrap">
-		<h4 class="rmr-related-post__main-title">SIGUIENTE LECTURA</h4>
+		<p class="rmr-related-post__main-title">SIGUIENTE LECTURA</p>
 		<div class="rmr-related-posts">
 
 	<?php
@@ -42,11 +42,11 @@ function rmr_render_related_posts() {
 			</a>
 		</div>
 		<div class="rmr-related-post__title">
-			<h5>
+			<p>
 				<a href="<?php echo $permalink; ?>" title="<?php echo $related_post->post_title; ?>">
 				<?php echo $related_post->post_title; ?>
 				</a>
-			</h5>
+			</p>
 		</div>
 	</div>
 

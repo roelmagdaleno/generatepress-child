@@ -54,6 +54,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<img src="https://cdn.roelmagdaleno.com/assets/2019/08/ZHFS36po_400x400.jpg"
 							 loading="lazy"
 							 alt="Roel Magdaleno"
+							 width="90"
+							 height="90"
 						>
 					</div>
 
@@ -119,6 +121,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<img src="https://cdn.roelmagdaleno.com/assets/2019/08/ZHFS36po_400x400.jpg"
 						 loading="lazy"
 						 alt="Roel Magdaleno"
+						 width="90"
+						 height="90"
 					>
 				</div>
 				<div class="rmr-author-bio__bio">
