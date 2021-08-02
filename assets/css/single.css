@@ -120,8 +120,11 @@ figcaption {
 
 .rmr-entry-meta {
     align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb;
     display: flex;
     margin-top: 1rem;
+    padding: 1rem 0;
 }
 
 .meta-author-avatar {
@@ -181,6 +184,33 @@ figcaption {
 
 .entry-author__est svg {
     margin-right: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .rmr-author-bio {
+        display: block;
+    }
+
+    .rmr-author-bio__avatar img {
+        width: 150px;
+    }
+
+    .rmr-author-bio__avatar {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .entry-post__misc {
+        display: block;
+    }
+
+    .entry-author__est {
+        margin-top: 10px;
+    }
+
+    .meta-author-avatar {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 768px) {
