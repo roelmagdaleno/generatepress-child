@@ -118,6 +118,71 @@ figcaption {
     margin: 0;
 }
 
+.rmr-entry-meta {
+    align-items: center;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.meta-author-avatar {
+    height: 90px;
+    margin-right: 20px;
+    width: 90px;
+}
+
+.meta-author-avatar img {
+    border-radius: 50%;
+    width: 90px;
+}
+
+.entry-post__name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.entry-post__single-post {
+    color: #595959;
+    margin: 0;
+}
+
+.entry-post__single-post .entry-date {
+    font-weight: bold;
+}
+
+.entry-post__misc {
+    align-items: center;
+    color: #595959;
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.entry-author__social {
+    display: flex;
+    margin-right: 30px;
+}
+
+.entry-author__social > a {
+    display: inline-flex;
+    margin-right: 15px;
+}
+
+.entry-author__social > a svg {
+    fill: #595959;
+}
+
+.entry-author__social > a:last-child {
+    margin-right: 0;
+}
+
+.entry-author__est {
+    align-items: center;
+    display: flex;
+}
+
+.entry-author__est svg {
+    margin-right: 5px;
+}
+
 @media only screen and (min-width: 768px) {
     .rmr-related-post {
         width: 49%;

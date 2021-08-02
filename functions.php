@@ -31,6 +31,23 @@ add_action( 'wp_loaded', 'rmr_wp_loaded' );
 add_filter( 'upload_dir', 'rmr_remove_uploads_string' );
 
 /**
+ * Get the estimated reading time in minutes.
+ *
+ * @since  0.1.7
+ *
+ * @param  string   $content   The post content.
+ * @param  int      $wpm       Words per minute. Default to 250.
+ * @return false|float         Reading time in minutes.
+ */
+function rmr_get_estimated_reading_time( $content = '', $wpm = 250 ) {
+	$content    = strip_shortcodes( $content );
+	$content    = strip_tags( $content );
+	$word_count = str_word_count( $content );
+
+	return ceil( $word_count / $wpm );
+}
+
+/**
  * Remove the "uploads" string from the path and url directory.
  *
  * Roel do this because he's using the S3 Uploads plugin and the
