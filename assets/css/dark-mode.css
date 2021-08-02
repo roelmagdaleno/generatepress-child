@@ -5,10 +5,35 @@ body.dark-mode {
 
 body.dark-mode .site-header {
     background-color: var(--dark-bg-container);
+    border-bottom: unset;
 }
 
 body.dark-mode .sidebar .widget {
-    background-color: var(--dark-bg-container);
+    background-color: var(--dark-bg-color);
+}
+
+body.dark-mode .is-right-sidebar {
+    border-left: unset;
+}
+
+body.dark-mode .entry-post__single-post,
+body.dark-mode .entry-post__misc,
+body.dark-mode figcaption {
+    color: #ffffff;
+}
+
+body.dark-mode .entry-author__social > a svg {
+    fill: #ffffff;
+}
+
+body.dark-mode .rmr-author-bio,
+body.dark-mode .rmr-related-post {
+    border: 1px solid #334155;
+}
+
+body.dark-mode .rmr-entry-meta {
+    border-bottom: 1px solid #334155;
+    border-top: 1px solid #334155;
 }
 
 body.dark-mode .inside-article,
@@ -37,7 +62,8 @@ body.dark-mode .site-description {
     color: #CBD5E1;
 }
 
-body.dark-mode a {
+body.dark-mode a,
+body.dark-mode a:hover {
     color: #0EA5E9;
 }
 
