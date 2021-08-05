@@ -29,6 +29,7 @@ add_action( 'rmr_generatepress_after_site_content', 'generate_do_comments_templa
 add_action( 'init', 'rmr_disable_emojis' );
 add_action( 'wp_loaded', 'rmr_wp_loaded' );
 add_filter( 'upload_dir', 'rmr_remove_uploads_string' );
+add_filter( 'run_wptexturize', '__return_false', 9999 );
 
 /**
  * Get the estimated reading time in minutes.
