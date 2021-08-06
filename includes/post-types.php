@@ -21,6 +21,7 @@ function rmr_create_post_types() {
 			),
 			'public'       => true,
 			'hierarchical' => true,
+			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-book',
 			'rewrite'      => array( 'slug' => 'hub' ),
 			'supports'     => array(
@@ -38,6 +39,7 @@ function rmr_create_post_types() {
 			),
 			'public'       => true,
 			'hierarchical' => true,
+			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-editor-code',
 			'rewrite'      => array( 'slug' => 'snippet' ),
 			'supports'     => array(
