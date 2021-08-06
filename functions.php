@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once 'includes/constants.php';
 require_once 'includes/related-posts.php';
+require_once 'includes/post-types.php';
 
 /**
  * For some reason we cannot remove the "generate_meta_viewport" action hook
