@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<div class="rmr-entry-meta">
 					<div class="meta-author-avatar">
-						<img src="https://cdn.roelmagdaleno.com/assets/2019/08/ZHFS36po_400x400.jpg"
+						<img src="https://cdn.roelmagdaleno.com/assets/uploads/2019/08/ZHFS36po_400x400.jpg"
 							 loading="lazy"
 							 alt="Roel Magdaleno"
 							 width="90"
@@ -118,7 +118,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="rmr-author-bio">
 				<div class="rmr-author-bio__avatar">
-					<img src="https://cdn.roelmagdaleno.com/assets/2019/08/ZHFS36po_400x400.jpg"
+					<img src="https://cdn.roelmagdaleno.com/assets/uploads/2019/08/ZHFS36po_400x400.jpg"
 						 loading="lazy"
 						 alt="Roel Magdaleno"
 						 width="90"
