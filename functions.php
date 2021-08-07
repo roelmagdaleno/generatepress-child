@@ -29,7 +29,6 @@ add_action( 'generate_menu_bar_items', 'rmr_add_dark_mode_button', 20 );
 add_action( 'rmr_generatepress_after_site_content', 'generate_do_comments_template', 15 );
 add_action( 'init', 'rmr_disable_emojis' );
 add_action( 'wp_loaded', 'rmr_wp_loaded' );
-add_filter( 'upload_dir', 'rmr_remove_uploads_string' );
 add_filter( 'run_wptexturize', '__return_false', 9999 );
 
 /**
@@ -47,33 +46,6 @@ function rmr_get_estimated_reading_time( $content = '', $wpm = 250 ) {
 	$word_count = str_word_count( $content );
 
 	return ceil( $word_count / $wpm );
-}
-
-/**
- * Remove the "uploads" string from the path and url directory.
- *
- * Roel do this because he's using the S3 Uploads plugin and the
- * CDN rewrite constant didn't remove the "uploads" string.
- *
- * @since  0.1.6
- *
- * @link   https://github.com/humanmade/S3-Uploads
- * @link   https://github.com/humanmade/S3-Uploads/issues/505
- *
- * @param  array   $dirs   The uploads path and url directory.
- * @return array           The uploads path and url without "uploads" string.
- */
-function rmr_remove_uploads_string( $dirs ) {
-	if ( ! defined( 'S3_UPLOADS_BUCKET_URL' ) ) {
-		return $dirs;
-	}
-
-	$dirs['baseurl'] = S3_UPLOADS_BUCKET_URL;
-	$dirs['basedir'] = ABSPATH . 'wp-content'; // this would usually be wp-content/uploads
-	$dirs['path']    = $dirs['basedir'] . $dirs['subdir'];
-	$dirs['url']     = $dirs['baseurl'] . $dirs['subdir'];
-
-	return $dirs;
 }
 
 /**
