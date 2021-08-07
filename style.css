@@ -40,6 +40,10 @@ figcaption {
     text-align: center;
 }
 
+ul, ol {
+    margin: 0 0 1.5em 1.5em;
+}
+
 .widget-area h5 {
     margin: 0;
 }
