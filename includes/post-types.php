@@ -41,7 +41,7 @@ function rmr_create_post_types() {
 			'hierarchical' => true,
 			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-editor-code',
-			'rewrite'      => array( 'slug' => 'snippet' ),
+			'rewrite'      => array( 'slug' => 'snippets' ),
 			'supports'     => array(
 				'title',
 				'editor',
