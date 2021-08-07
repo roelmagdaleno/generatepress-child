@@ -20,6 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link rel="preconnect" href="https://www.google-analytics.com">
 	<link rel="preconnect" href="https://static.addtoany.com">
 
+	<?php
+
+	if ( 'snippets' === get_post_type() ) {
+		echo '<link rel="preconnect" href="https://phpsandbox.io">';
+	}
+
+	?>
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RWJKXZ0P0L"></script>
 	<script>
