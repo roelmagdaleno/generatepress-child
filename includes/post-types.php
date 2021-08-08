@@ -48,6 +48,7 @@ function rmr_create_post_types() {
 				'revisions',
 				'thumbnail',
 				'page-attributes',
+				'excerpt',
 			),
 		),
 	);
