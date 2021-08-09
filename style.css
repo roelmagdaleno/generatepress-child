@@ -105,3 +105,19 @@ a.wpp-post-title {
 h2 code {
     font-size: 32px !important;
 }
+
+.contained-content.one-container .site-content,
+.contained-content.separate-containers .inside-article {
+    padding: 30px;
+}
+
+.wp-block-post-template,
+.wp-block-query-loop {
+    margin-left: 0;
+}
+
+.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull {
+    margin-left: 0;
+    max-width: 100%;
+    width: 100%;
+}
