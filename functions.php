@@ -7,6 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once 'includes/constants.php';
 require_once 'includes/related-posts.php';
 require_once 'includes/post-types.php';
+require_once 'includes/fonts.php';
 
 /**
  * For some reason we cannot remove the "generate_meta_viewport" action hook
@@ -21,10 +22,8 @@ remove_action( 'wp_head', 'wp_resource_hints', 2 );
 remove_action( 'wp_head', 'feed_links', 2 );
 
 add_action( 'wp_head', 'feed_links' );
-add_action( 'wp_head', 'rmr_preload_fonts', 8 );
 add_action( 'wp_enqueue_scripts', 'rmr_load_custom_assets' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
-add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 );
 add_action( 'generate_menu_bar_items', 'rmr_add_dark_mode_button', 20 );
 add_action( 'rmr_generatepress_after_site_content', 'generate_do_comments_template', 15 );
 add_action( 'init', 'rmr_disable_emojis' );
@@ -137,22 +136,6 @@ function rmr_load_custom_assets() {
 }
 
 /**
- * Add "preload" links in <head> HTML tag. These lines will help to reduce GPSI scores.
- *
- * @since 0.1.0
- * @since 0.1.1   Preload JetBrains Mono font.
- */
-function rmr_preload_fonts() {
-	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>';
-
-	echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/inter/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>';
-
-	if ( is_single() && has_block( 'core/code' ) ) {
-		echo '<link rel="preload" href="' . RMR_THEME_URI . '/assets/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>';
-	}
-}
-
-/**
  * Load ASAP fonts in Gutenberg editor.
  *
  * Why we have to do this?
@@ -163,23 +146,4 @@ function rmr_preload_fonts() {
  */
 function rmr_load_fonts_in_gutenberg_editor() {
 	wp_enqueue_style( 'rmr-styles', get_stylesheet_uri() );
-}
-
-/**
- * Load local fonts and use them in theme instead of using Google Fonts CDN.
- * We're using these fonts locally:
- *
- * - Asap (blog and pages)
- * - JetBrains Mono (for code editor)
- *
- * @since  0.1.0
- *
- * @param  array   $fonts   The current default fonts.
- * @return array            The fonts with our custom ones.
- */
-function rmr_load_local_fonts( $fonts ) {
-	$fonts[] = 'Inter';
-	$fonts[] = 'JetBrains Mono';
-
-	return $fonts;
 }
