@@ -64,9 +64,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php echo get_the_author_meta( 'display_name' ); ?>
 						</span>
 
-						<p class="entry-post__single-post">
-							Publicado el <span class="entry-date published" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished"><?php echo esc_html( get_the_date() ); ?></span>
-						</p>
+						<div class="rmr-post-date">
+							<p class="entry-post__single-post">
+								Publicado el <span class="entry-date published" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" itemprop="datePublished"><?php echo esc_html( get_the_date() ); ?></span>
+							</p>
+
+							<?php
+
+							$updated_time   = get_the_modified_time( 'U' );
+							$published_time = get_the_time( 'U' ) + 1800;
+
+							if ( $updated_time > $published_time ) {
+								echo '<span class="rmr-post-date__dot">•</span>';
+								echo '<p class="entry-post__single-post">Actualizado el <span class="entry-date updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '" itemprop="dateModified">' . esc_html( get_the_modified_date() ) . '</span></p>';
+							}
+
+							?>
+						</div>
 
 						<div class="entry-post__misc">
 							<div class="entry-author__social">

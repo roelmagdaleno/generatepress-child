@@ -194,9 +194,35 @@ figcaption {
     margin-right: 5px;
 }
 
+.rmr-post-date {
+    display: flex;
+}
+
+.rmr-post-date__dot {
+    color: #595959;
+    margin: 0 10px;
+}
+
 @media only screen and (max-width: 600px) {
-    .rmr-author-bio {
+    .rmr-post-date {
         display: block;
+        margin: 1rem 0;
+    }
+
+    .rmr-post-date__dot {
+        display: none;
+    }
+
+    .rmr-author-bio,
+    .entry-author__social,
+    .rmr-entry-meta,
+    .entry-post__misc {
+        display: block;
+    }
+
+    .entry-author__social {
+        margin: 0;
+        height: 20px;
     }
 
     .rmr-author-bio__avatar img {
@@ -208,16 +234,22 @@ figcaption {
         text-align: center;
     }
 
-    .entry-post__misc {
-        display: block;
+    .entry-author__est {
+        display: inline-flex;
+        margin-top: 1rem;
     }
 
-    .entry-author__est {
-        margin-top: 10px;
+    .rmr-entry-meta {
+        text-align: center;
     }
 
     .meta-author-avatar {
-        display: none;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .entry-post-meta {
+        margin-top: 1rem;
     }
 }
 
