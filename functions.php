@@ -8,6 +8,7 @@ require_once 'includes/constants.php';
 require_once 'includes/related-posts.php';
 require_once 'includes/post-types.php';
 require_once 'includes/fonts.php';
+require_once 'includes/images.php';
 
 /**
  * For some reason we cannot remove the "generate_meta_viewport" action hook
