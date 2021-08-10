@@ -135,8 +135,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<img src="https://cdn.roelmagdaleno.com/assets/uploads/2019/08/ZHFS36po_400x400.jpg"
 						 loading="lazy"
 						 alt="Roel Magdaleno"
-						 width="90"
-						 height="90"
+						 width="120"
+						 height="120"
 					>
 				</div>
 				<div class="rmr-author-bio__bio">
