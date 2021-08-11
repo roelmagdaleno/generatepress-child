@@ -9,6 +9,7 @@ require_once 'includes/related-posts.php';
 require_once 'includes/post-types.php';
 require_once 'includes/fonts.php';
 require_once 'includes/images.php';
+require_once 'includes/hub.php';
 
 /**
  * For some reason we cannot remove the "generate_meta_viewport" action hook
@@ -124,16 +125,23 @@ function rmr_load_custom_assets() {
 		true
 	);
 
-	if ( ! is_single() ) {
-		return;
+	if ( 'hub' === get_post_type() ) {
+		wp_enqueue_style(
+			'rmr-hub.css',
+			$uri . '/assets/css/hub.css',
+			null,
+			RMR_VERSION
+		);
 	}
 
-	wp_enqueue_style(
-		'rmr-single.css',
-		$uri . '/assets/css/single.css',
-		null,
-		RMR_VERSION
-	);
+	if ( is_single() ) {
+		wp_enqueue_style(
+			'rmr-single.css',
+			$uri . '/assets/css/single.css',
+			null,
+			RMR_VERSION
+		);
+	}
 }
 
 /**

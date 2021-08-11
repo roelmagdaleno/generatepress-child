@@ -1,0 +1,20 @@
+.rmr-hub-sidebar {
+    padding: 30px;
+}
+
+.rmr-hub__title {
+    font-weight: bold;
+}
+
+.rmr-hub-chevron {
+    margin-right: 5px;
+    width: 20px;
+}
+
+.rmr-hub-resources li {
+    display: flex;
+}
+
+.rmr-hub-resources li.rmr-hub-current {
+    font-weight: bold;
+}
