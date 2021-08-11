@@ -26,17 +26,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 		echo '<link rel="preconnect" href="https://phpsandbox.io">';
 	}
 
+	if ( ! is_user_logged_in() ) {
 	?>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89993251-1"></script>
 	<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-        gtag('config', 'UA-89993251-1');
+		gtag('config', 'UA-89993251-1');
 	</script>
+
+	<?php
+	}
+
+	?>
 
 	<?php wp_head(); ?>
 
