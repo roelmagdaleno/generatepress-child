@@ -28,6 +28,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 			<header class="entry-header">
 				<?php
+
+				if ( function_exists( 'yoast_breadcrumb' ) ) {
+					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+				}
+
 				/**
 				 * generate_before_entry_title hook.
 				 *

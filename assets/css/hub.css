@@ -1,5 +1,6 @@
 .rmr-hub-sidebar {
-    padding: 30px;
+    position: sticky;
+    top: 50px;
 }
 
 .rmr-hub__title {
