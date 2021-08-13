@@ -19,3 +19,7 @@
 .rmr-hub-resources li.rmr-hub-current {
     font-weight: bold;
 }
+
+.rmr-hub-title {
+    margin: 0 !important;
+}
