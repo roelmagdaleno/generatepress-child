@@ -30,6 +30,7 @@ function rmr_create_post_types() {
 				'revisions',
 				'thumbnail',
 				'page-attributes',
+				'custom-fields',
 			),
 		),
 		'snippets' => array(
