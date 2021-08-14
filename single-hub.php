@@ -54,6 +54,6 @@ get_header(); ?>
  */
 do_action( 'generate_after_primary_content_area' );
 
-rmr_construct_hub_sidebar();
+rmr_render_hub_sidebar();
 
 get_footer();

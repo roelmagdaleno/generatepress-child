@@ -9,19 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-global $post;
-
-$args = array(
-	'posts_per_page' => -1,
-	'post_parent'    => $post->post_parent,
-	'post_type'      => 'hub',
-	'order'          => 'ASC',
-	'orderby'        => 'menu_order',
-);
-
-$children = get_children( $args );
-$parent   = get_post( $post->post_parent );
-$hub      = get_post( $parent->post_parent );
+$hub_menu = rmr_get_hub_menu();
 
 ?>
 
@@ -30,17 +18,17 @@ $hub      = get_post( $parent->post_parent );
 		<div class="rmr-hub-sidebar">
 			<aside class="widget inner-padding">
 				<h2 class="widget-title rmr-hub-title">
-					<?php echo $hub->post_title; ?>
+					<?php echo $hub_menu['hub']['text']; ?>
 				</h2>
 
 				<h2 class="widget-title">
-					<?php echo $parent->post_title; ?>
+					<?php echo $hub_menu['section']['text']; ?>
 				</h2>
 
 				<ul class="rmr-hub-resources">
 					<?php
 
-					foreach ( $children as $child ) {
+					foreach ( $hub_menu['children'] as $child ) {
 						$current     = $child->ID === $post->ID ? 'rmr-hub-current' : '';
 						$short_title = get_post_meta( $child->ID, 'sidebar_title', true );
 						$post_title  = ! $short_title ? $child->post_title : $short_title;
