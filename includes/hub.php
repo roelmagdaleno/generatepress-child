@@ -67,9 +67,19 @@ function rmr_get_hub_menu() {
 		return array();
 	}
 
-	$hub      = $breadcrumbs[1]; // 1 index contains the hub.
-	$section  = $breadcrumbs[2]; // 2 index contains the section.
-	$children = get_children( $section['id'] );
+	$hub     = $breadcrumbs[1]; // 1 index contains the hub.
+	$section = $breadcrumbs[2]; // 2 index contains the section.
+
+	$args = array(
+		'posts_per_page' => -1,
+		'order'          => 'ASC',
+		'orderby'        => 'menu_order',
+		'post_type'      => 'hub',
+		'post_parent'    => $section['id'],
+		'post_status'    => is_user_logged_in() ? 'any' : 'publish',
+	);
+
+	$children = get_children( $args );
 
 	return compact( 'hub', 'section', 'children' );
 }
