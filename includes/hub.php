@@ -64,7 +64,11 @@ function rmr_get_hub_menu() {
 	global $breadcrumbs;
 
 	if ( ! isset( $breadcrumbs[2] ) ) {
-		return array();
+		return array(
+			'hub'      => array( 'text' => '' ),
+			'section'  => array( 'text' => '' ),
+			'children' => array(),
+		);
 	}
 
 	$hub     = $breadcrumbs[1]; // 1 index contains the hub.
