@@ -6,7 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_filter( 'post_thumbnail_html', 'rmr_featured_images_as_webp' );
 add_filter( 'the_content', 'rmr_images_as_webp' );
-add_action( 'admin_init', 'rmr_disable_s3_path_on_admin' );
 
 /**
  * Use featured image as webp instead of png, jpg or jpeg.
