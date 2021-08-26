@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php
 
 							$updated_time   = get_the_modified_time( 'U' );
-							$published_time = get_the_time( 'U' ) + 1800;
+							$published_time = get_the_time( 'U' ) + 3600;
 
 							if ( $updated_time > $published_time ) {
 								echo '<span class="rmr-post-date__dot">•</span>';
