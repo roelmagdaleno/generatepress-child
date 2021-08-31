@@ -106,6 +106,10 @@ function rmr_disable_emojis_tinymce( $plugins ) {
  * @since 0.1.1
  */
 function rmr_load_custom_assets() {
+	if ( ! is_user_logged_in() ) {
+		wp_deregister_script( 'jquery' );
+	}
+
 	wp_deregister_script( 'wp-embed' );
 
 	$uri = get_stylesheet_directory_uri();
