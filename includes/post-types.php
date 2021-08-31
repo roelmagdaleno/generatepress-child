@@ -31,6 +31,7 @@ function rmr_create_post_types() {
 				'thumbnail',
 				'page-attributes',
 				'custom-fields',
+				'comments',
 			),
 		),
 		'snippets' => array(
@@ -50,6 +51,7 @@ function rmr_create_post_types() {
 				'thumbnail',
 				'page-attributes',
 				'excerpt',
+				'comments',
 			),
 		),
 	);
