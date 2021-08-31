@@ -104,6 +104,7 @@ function rmr_disable_emojis_tinymce( $plugins ) {
  * the "core/code" Gutenberg block.
  *
  * @since 0.1.1
+ * @since 0.2.3 Deregister jQuery for non logged-in users.
  */
 function rmr_load_custom_assets() {
 	if ( ! is_user_logged_in() ) {
