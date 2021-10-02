@@ -170,24 +170,6 @@ figcaption {
     margin-top: 0.5rem;
 }
 
-.entry-author__social {
-    display: flex;
-    margin-right: 30px;
-}
-
-.entry-author__social > a {
-    display: inline-flex;
-    margin-right: 15px;
-}
-
-.entry-author__social > a svg {
-    fill: #595959;
-}
-
-.entry-author__social > a:last-child {
-    margin-right: 0;
-}
-
 .entry-author__est {
     align-items: center;
     display: flex;
