@@ -44,6 +44,7 @@ function rmr_create_post_types() {
 			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-editor-code',
 			'rewrite'      => array( 'slug' => 'snippets' ),
+			'taxonomies'   => array( 'category' ),
 			'supports'     => array(
 				'title',
 				'editor',
