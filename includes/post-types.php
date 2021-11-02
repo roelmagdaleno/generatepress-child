@@ -11,6 +11,7 @@ add_action( 'init', 'rmr_create_post_types' );
  * that needs to exist in its own url or category.
  *
  * @since 0.1.7
+ * @since 0.2.6 Add categories for Snippets.
  */
 function rmr_create_post_types() {
 	$post_types = array(
