@@ -1,6 +1,6 @@
 <?php
 
-require_once 'widgets/share.php';
+require_once dirname( __DIR__ ) . '/admin/widgets/share.php';
 
 add_action( 'widgets_init', 'rmr_register_widgets' );
 

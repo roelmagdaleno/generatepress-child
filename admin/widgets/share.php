@@ -25,6 +25,10 @@ class RMR_Share extends WP_Widget {
 	 * @param array   $instance   The settings for the particular instance of the widget.
 	 */
 	public function widget( $args, $instance ) {
+		if ( is_home() ) {
+			return;
+		}
+
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		echo $args['before_widget'];
 
