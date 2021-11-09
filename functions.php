@@ -10,10 +10,10 @@ require_once 'includes/post-types.php';
 require_once 'includes/fonts.php';
 require_once 'includes/images.php';
 require_once 'includes/hub.php';
-require_once 'includes/widgets.php';
+require_once 'includes/custom-widgets.php';
 
 /**
- * For some reason we cannot remove the "generate_meta_viewport" action hook
+ * For some reason we cannot remove the "generate_meta_viewport" action hook,
  * so we have to return null in the filter and put the meta viewport in our header.php.
  *
  * @since 0.1.2
@@ -42,7 +42,7 @@ add_filter( 'run_wptexturize', '__return_false', 9999 );
  * @param  int      $wpm       Words per minute. Default to 250.
  * @return false|float         Reading time in minutes.
  */
-function rmr_get_estimated_reading_time( $content = '', $wpm = 250 ) {
+function rmr_get_estimated_reading_time( string $content = '', int $wpm = 250 ) {
 	$content    = strip_shortcodes( $content );
 	$content    = strip_tags( $content );
 	$word_count = str_word_count( $content );
@@ -96,7 +96,7 @@ function rmr_disable_emojis() {
  * @param  array   $plugins   The tinyMCE plugins.
  * @return array              The tinyMCE without the "wpemoji" script.
  */
-function rmr_disable_emojis_tinymce( $plugins ) {
+function rmr_disable_emojis_tinymce( array $plugins ) : array {
 	return is_array( $plugins ) ? array_diff( $plugins, array( 'wpemoji' ) ) : array();
 }
 

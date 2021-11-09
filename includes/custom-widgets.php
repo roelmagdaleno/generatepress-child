@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 require_once dirname( __DIR__ ) . '/admin/widgets/share.php';
 
 add_action( 'widgets_init', 'rmr_register_widgets' );
