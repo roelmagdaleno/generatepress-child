@@ -5,7 +5,7 @@
  Author:       Roel Magdaleno
  Author URI:   https://roelmagdaleno.com
  Template:     generatepress
- Version:      0.2.6
+ Version:      0.2.7
 */
 :root {
     --dark-bg-color: #0F172A;
@@ -94,14 +94,9 @@ header.site-header {
     height: 100%;
 }
 
-.widget_a2a_share_save_widget {
+.widget_rmr_share {
     position: sticky;
     top: 50px;
-}
-
-#custom_html-3 {
-    position: sticky;
-    top: 230px;
 }
 
 a.wpp-post-title {
