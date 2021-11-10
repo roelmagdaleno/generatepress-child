@@ -25,7 +25,7 @@ class RMR_Share extends WP_Widget {
 	 * @param array   $instance   The settings for the particular instance of the widget.
 	 */
 	public function widget( $args, $instance ) {
-		if ( is_home() ) {
+		if ( ! is_single() ) {
 			return;
 		}
 
