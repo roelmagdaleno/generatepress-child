@@ -20,6 +20,7 @@ class RMR_Share extends WP_Widget {
 	 * Subclasses should override this function to generate their widget code.
 	 *
 	 * @since 0.2.7
+	 * @since 0.3.0   Render widget only on single posts.
 	 *
 	 * @param array   $args       Display arguments.
 	 * @param array   $instance   The settings for the particular instance of the widget.

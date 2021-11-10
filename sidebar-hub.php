@@ -56,8 +56,8 @@ $hub_menu = rmr_get_hub_menu();
 
 				<?php
 
-				if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) {
-					ADDTOANY_SHARE_SAVE_KIT();
+				if ( function_exists( 'rmr_render_share_buttons' ) ) {
+					rmr_render_share_buttons();
 				}
 
 				?>

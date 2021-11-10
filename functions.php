@@ -162,3 +162,17 @@ function rmr_load_custom_assets() {
 function rmr_load_fonts_in_gutenberg_editor() {
 	wp_enqueue_style( 'rmr-styles', get_stylesheet_uri() );
 }
+
+/**
+ * Render the share buttons widgets.
+ *
+ * We have two ways to render the share buttons, using the custom widget
+ * and this function.
+ *
+ * Use this function to render the buttons wherever you want.
+ *
+ * @since 0.3.0
+ */
+function rmr_render_share_buttons() {
+	include_once 'admin/views/share.php';
+}
