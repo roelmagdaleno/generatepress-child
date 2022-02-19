@@ -1,28 +1,57 @@
 @font-face {
-    font-family: 'JetBrains Mono';
+    font-family: 'MonoLisa';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2'),
-    url('../fonts/jetbrains-mono/JetBrainsMono-Regular.woff') format('woff');
+    src: local(''),
+    url('../fonts/monolisa/Monolisa-Regular.woff2') format('woff2'),
+    url('../fonts/monolisa/Monolisa-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MonoLisa';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''),
+    url('../fonts/monolisa/Monolisa-Bold.woff2') format('woff2'),
+    url('../fonts/monolisa/Monolisa-Bold.woff') format('woff');
 }
 
 code {
-    background: #f3f4f5;
-    border-radius: 3px;
-    color: #23282d;
-    font-family: 'JetBrains Mono', serif !important;
+    font-family: 'MonoLisa', serif !important;
     font-size: 20px !important;
-    padding: 5px;
+    font-weight: 600 !important;
+}
+
+code:before,
+code:after {
+    content: "`";
+}
+
+pre code:before,
+pre code:after {
+    content: unset;
+}
+
+code:after {
+    content: "`";
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-    font-family: "JetBrains Mono", Hack, serif;
+    font-family: "MonoLisa", serif;
+    font-size: 20px !important;
+    font-weight: 400 !important;
 }
 
 figcaption {
-    font-size: 20px !important;
+    font-size: 18px !important;
+}
+
+.inside-article a {
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 .rmr-related-post__title {
@@ -53,8 +82,7 @@ figcaption {
 .rmr-related-post {
     border-radius: 4px;
     border: 1px solid #e5e7eb;
-    display: block;
-    float: left;
+    display: inline-block;
     height: 350px;
     margin: 0 0 5% 0;
     padding: 15px;
@@ -100,7 +128,8 @@ figcaption {
     border-radius: 4px;
     border: 1px solid #e5e7eb;
     display: flex;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.75;
     padding: 20px;
 }
 
@@ -118,11 +147,6 @@ figcaption {
     flex: 1;
 }
 
-.rmr-author-bio__bio .rmr-author-bio__written-by {
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
 .rmr-author-bio__bio p {
     margin: 0;
 }
@@ -132,7 +156,7 @@ figcaption {
     border-bottom: 1px solid #e5e7eb;
     border-top: 1px solid #e5e7eb;
     display: flex;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.5;
     margin-top: 2rem;
     padding: 1rem 0;
@@ -155,7 +179,7 @@ figcaption {
 }
 
 .entry-post__single-post {
-    color: #595959;
+    color: #374151;
     margin: 0;
 }
 
@@ -165,7 +189,7 @@ figcaption {
 
 .entry-post__misc {
     align-items: center;
-    color: #595959;
+    color: #374151;
     display: flex;
     margin-top: 0.5rem;
 }
@@ -176,7 +200,9 @@ figcaption {
 }
 
 .entry-author__est svg {
+    height: 23px;
     margin-right: 5px;
+    width: 23px;
 }
 
 .rmr-post-date {
@@ -184,8 +210,19 @@ figcaption {
 }
 
 .rmr-post-date__dot {
-    color: #595959;
+    color: #374151;
     margin: 0 10px;
+}
+
+.rmr-author-bio__meta {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.rmr-author-bio__meta .entry-author__social {
+    margin-right: 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -257,7 +294,7 @@ figcaption {
     }
 
     .rmr-related-posts {
-        padding: 0;
+        padding: 40px;
     }
 
     .rmr-related-post {

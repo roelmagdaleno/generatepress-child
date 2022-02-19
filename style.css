@@ -5,39 +5,48 @@
  Author:       Roel Magdaleno
  Author URI:   https://roelmagdaleno.com
  Template:     generatepress
- Version:      0.2.9
+ Version:      0.3.0
 */
+
 :root {
     --dark-bg-color: #0F172A;
     --dark-bg-container: #1E293B;
 }
 
-/* poppins-regular - latin */
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     src: local(''),
-    url('assets/fonts/poppins/poppins-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('assets/fonts/poppins/poppins-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('assets/fonts/inter/inter-v7-latin-regular.woff2') format('woff2'),
+    url('assets/fonts/inter/inter-v7-latin-regular.woff') format('woff');
 }
-/* poppins-600 - latin */
+
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     src: local(''),
-    url('assets/fonts/poppins/poppins-v15-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('assets/fonts/poppins/poppins-v15-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('assets/fonts/inter/inter-v7-latin-600.woff2') format('woff2'),
+    url('assets/fonts/inter/inter-v7-latin-600.woff') format('woff');
 }
-/* poppins-700 - latin */
+
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     src: local(''),
-    url('assets/fonts/poppins/poppins-v15-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('assets/fonts/poppins/poppins-v15-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('assets/fonts/inter/inter-v7-latin-700.woff2') format('woff2'),
+    url('assets/fonts/inter/inter-v7-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: local(''),
+    url('assets/fonts/inter/inter-v7-latin-800.woff2') format('woff2'),
+    url('assets/fonts/inter/inter-v7-latin-800.woff') format('woff');
 }
 
 .main-navigation {
@@ -154,7 +163,9 @@ h2 code {
 }
 
 .entry-author__social > a svg {
-    fill: #595959;
+    fill: #374151;
+    height: 22px;
+    width: 22px;
 }
 
 .entry-author__social > a:last-child {

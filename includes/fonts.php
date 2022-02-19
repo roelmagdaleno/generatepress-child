@@ -15,17 +15,18 @@ add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 )
  */
 function rmr_preload_fonts() {
 	$fonts = array(
-		'poppins-v15-latin-600.woff2',
-		'poppins-v15-latin-700.woff2',
-		'poppins-v15-latin-regular.woff2',
+		'inter-v7-latin-600.woff2',
+		'inter-v7-latin-700.woff2',
+		'inter-v7-latin-800.woff2',
+		'inter-v7-latin-regular.woff2',
 	);
 
 	foreach ( $fonts as $font ) {
-		echo rmr_get_font_link( 'poppins', $font );
+		echo rmr_get_font_link( 'inter', $font );
 	}
 
 	if ( is_single() && has_block( 'core/code' ) ) {
-		echo rmr_get_font_link( 'jetbrains-mono', 'JetBrainsMono-Regular.woff2' );
+		echo rmr_get_font_link( 'monolisa', 'MonoLisa-Regular.woff2' );
 	}
 }
 
@@ -42,6 +43,7 @@ function rmr_preload_fonts() {
  * @return array            The fonts with our custom ones.
  */
 function rmr_load_local_fonts( array $fonts ) : array {
+	$fonts[] = 'Inter';
 	$fonts[] = 'Poppins';
 	$fonts[] = 'JetBrains Mono';
 
