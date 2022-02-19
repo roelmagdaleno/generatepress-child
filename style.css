@@ -7,12 +7,6 @@
  Template:     generatepress
  Version:      0.3.0
 */
-
-:root {
-    --dark-bg-color: #0F172A;
-    --dark-bg-container: #1E293B;
-}
-
 @font-face {
     font-family: 'Inter';
     font-style: normal;

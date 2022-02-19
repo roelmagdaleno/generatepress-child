@@ -243,8 +243,18 @@ figcaption {
     }
 
     .entry-author__social {
-        margin: 0;
-        height: 20px;
+        justify-content: center;
+        margin: 0 !important;
+    }
+
+    .rmr-author-bio__meta {
+        display: block;
+        text-align: center;
+    }
+
+    .rmr-author-bio__written-by {
+        display: block;
+        margin-bottom: 0.5em;
     }
 
     .rmr-author-bio__avatar img {
