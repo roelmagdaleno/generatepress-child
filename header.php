@@ -18,7 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link rel="preconnect" href="https://cdn.roelmagdaleno.com">
 	<link rel="preconnect" href="https://www.googletagmanager.com">
 	<link rel="preconnect" href="https://www.google-analytics.com">
-	<link rel="preconnect" href="https://static.addtoany.com">
 
 	<?php
 
