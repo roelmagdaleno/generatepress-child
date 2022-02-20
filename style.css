@@ -11,6 +11,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: local(''),
     url('assets/fonts/inter/inter-v7-latin-regular.woff2') format('woff2'),
     url('assets/fonts/inter/inter-v7-latin-regular.woff') format('woff');
@@ -20,6 +21,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
+    font-display: swap;
     src: local(''),
     url('assets/fonts/inter/inter-v7-latin-600.woff2') format('woff2'),
     url('assets/fonts/inter/inter-v7-latin-600.woff') format('woff');
@@ -29,6 +31,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
     src: local(''),
     url('assets/fonts/inter/inter-v7-latin-700.woff2') format('woff2'),
     url('assets/fonts/inter/inter-v7-latin-700.woff') format('woff');
@@ -38,9 +41,30 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
+    font-display: swap;
     src: local(''),
     url('assets/fonts/inter/inter-v7-latin-800.woff2') format('woff2'),
     url('assets/fonts/inter/inter-v7-latin-800.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MonoLisa';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+    url('assets/fonts/monolisa/Monolisa-Regular.woff2') format('woff2'),
+    url('assets/fonts/monolisa/Monolisa-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'MonoLisa';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''),
+    url('assets/fonts/monolisa/Monolisa-Bold.woff2') format('woff2'),
+    url('assets/fonts/monolisa/Monolisa-Bold.woff') format('woff');
 }
 
 .main-navigation {
@@ -103,10 +127,17 @@ header.site-header {
 }
 
 a.wpp-post-title {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.wpp-thumbnail {
+    max-width: unset;
 }
 
 .wpp-list li {
+    align-items: center;
+    display: flex;
     margin-bottom: 2rem !important;
 }
 

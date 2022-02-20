@@ -1,22 +1,22 @@
-@font-face {
-    font-family: 'MonoLisa';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local(''),
-    url('../fonts/monolisa/Monolisa-Regular.woff2') format('woff2'),
-    url('../fonts/monolisa/Monolisa-Regular.woff') format('woff');
-}
+/*@font-face {*/
+/*    font-family: 'MonoLisa';*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    font-display: swap;*/
+/*    src: local(''),*/
+/*    url('../fonts/monolisa/Monolisa-Regular.woff2') format('woff2'),*/
+/*    url('../fonts/monolisa/Monolisa-Regular.woff') format('woff');*/
+/*}*/
 
-@font-face {
-    font-family: 'MonoLisa';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: local(''),
-    url('../fonts/monolisa/Monolisa-Bold.woff2') format('woff2'),
-    url('../fonts/monolisa/Monolisa-Bold.woff') format('woff');
-}
+/*@font-face {*/
+/*    font-family: 'MonoLisa';*/
+/*    font-style: normal;*/
+/*    font-weight: 600;*/
+/*    font-display: swap;*/
+/*    src: local(''),*/
+/*    url('../fonts/monolisa/Monolisa-Bold.woff2') format('woff2'),*/
+/*    url('../fonts/monolisa/Monolisa-Bold.woff') format('woff');*/
+/*}*/
 
 code {
     font-family: 'MonoLisa', serif !important;
@@ -50,6 +50,11 @@ figcaption {
 }
 
 .inside-article a {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.textwidget p a {
     font-weight: 600;
     text-decoration: underline;
 }

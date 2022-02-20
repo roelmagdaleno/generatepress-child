@@ -26,7 +26,8 @@ function rmr_preload_fonts() {
 	}
 
 	if ( is_single() && has_block( 'core/code' ) ) {
-		echo rmr_get_font_link( 'monolisa', 'MonoLisa-Regular.woff2' );
+//		echo rmr_get_font_link( 'monolisa', 'MonoLisa-Regular.woff2' );
+//		echo rmr_get_font_link( 'monolisa', 'MonoLisa-Bold.woff2' );
 	}
 }
 
