@@ -8,6 +8,7 @@ require_once 'includes/constants.php';
 require_once 'includes/related-posts.php';
 require_once 'includes/post-types.php';
 require_once 'includes/fonts.php';
+require_once 'includes/scripts.php';
 require_once 'includes/images.php';
 require_once 'includes/hub.php';
 require_once 'includes/custom-widgets.php';
@@ -25,7 +26,6 @@ remove_action( 'wp_head', 'wp_resource_hints', 2 );
 remove_action( 'wp_head', 'feed_links', 2 );
 
 add_action( 'wp_head', 'feed_links' );
-add_action( 'wp_enqueue_scripts', 'rmr_load_custom_assets' );
 add_action( 'enqueue_block_editor_assets', 'rmr_load_fonts_in_gutenberg_editor' );
 add_action( 'rmr_generatepress_after_site_content', 'generate_do_comments_template', 15 );
 add_action( 'init', 'rmr_disable_emojis' );
@@ -82,41 +82,6 @@ function rmr_disable_emojis() {
  */
 function rmr_disable_emojis_tinymce( array $plugins ) : array {
 	return is_array( $plugins ) ? array_diff( $plugins, array( 'wpemoji' ) ) : array();
-}
-
-/**
- * Load the "JetBrains Mono" font in single posts and only if the post contains
- * the "core/code" Gutenberg block.
- *
- * @since 0.1.1
- * @since 0.2.3 Deregister jQuery for non logged-in users.
- */
-function rmr_load_custom_assets() {
-	if ( ! is_user_logged_in() ) {
-		wp_deregister_script( 'jquery' );
-	}
-
-	wp_deregister_script( 'wp-embed' );
-
-	$uri = get_stylesheet_directory_uri();
-
-	if ( 'hub' === get_post_type() ) {
-		wp_enqueue_style(
-			'rmr-hub.css',
-			$uri . '/assets/css/hub.css',
-			null,
-			RMR_VERSION
-		);
-	}
-
-	if ( is_single() ) {
-		wp_enqueue_style(
-			'rmr-single.css',
-			$uri . '/assets/css/single.css',
-			null,
-			RMR_VERSION
-		);
-	}
 }
 
 /**

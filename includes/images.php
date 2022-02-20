@@ -9,7 +9,7 @@ add_filter( 'generate_single_featured_image_output', 'rmr_remove_featured_image_
 add_filter( 'the_content', 'rmr_images_as_webp' );
 
 /**
- * Remove lazy load from post featued image.
+ * Remove lazy load from post featured image.
  *
  * @since  0.3.0
  *
