@@ -5,7 +5,7 @@
  Author:       Roel Magdaleno
  Author URI:   https://roelmagdaleno.com
  Template:     generatepress
- Version:      0.4.0
+ Version:      0.4.1
 */
 @font-face {
     font-family: 'Inter';
@@ -53,8 +53,8 @@
     font-weight: 400;
     font-display: swap;
     src: local(''),
-    url('assets/fonts/monolisa/Monolisa-Regular.woff2') format('woff2'),
-    url('assets/fonts/monolisa/Monolisa-Regular.woff') format('woff');
+    url('assets/fonts/monolisa/MonoLisa-Regular.woff2') format('woff2'),
+    url('assets/fonts/monolisa/MonoLisa-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -63,8 +63,8 @@
     font-weight: 600;
     font-display: swap;
     src: local(''),
-    url('assets/fonts/monolisa/Monolisa-Bold.woff2') format('woff2'),
-    url('assets/fonts/monolisa/Monolisa-Bold.woff') format('woff');
+    url('assets/fonts/monolisa/MonoLisa-Bold.woff2') format('woff2'),
+    url('assets/fonts/monolisa/MonoLisa-Bold.woff') format('woff');
 }
 
 .main-navigation {
