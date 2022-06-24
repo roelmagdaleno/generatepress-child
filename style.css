@@ -81,6 +81,14 @@ ul, ol {
     margin: 0 0 1.5em 1.5em;
 }
 
+body {
+    font-size: 20px;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
 .widget-area h5 {
     margin: 0;
 }
@@ -189,8 +197,8 @@ h2 code {
 
 .entry-author__social > a svg {
     fill: #374151;
-    height: 22px;
-    width: 22px;
+    height: 25px;
+    width: 25px;
 }
 
 .entry-author__social > a:last-child {
@@ -231,4 +239,13 @@ h2 code {
 
 .rmr-share-link.whatsapp {
     background-color: rgb(18, 175, 10);
+}
+
+h1.entry-title {
+    font-size: 2.6rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.05rem;
 }

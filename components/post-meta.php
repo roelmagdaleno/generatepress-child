@@ -9,9 +9,9 @@
 	</div>
 
 	<div class="entry-post-meta">
-		<span class="entry-post__name" itemprop="name">
+		<p class="entry-post__name" itemprop="name">
 			<?php echo get_the_author_meta( 'display_name' ); ?>
-		</span>
+		</p>
 
 		<div class="rmr-post-date">
 			<p class="entry-post__single-post">
@@ -58,15 +58,15 @@
 				</a>
 			</div>
 			<div class="entry-author__est">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="25"
-					 height="25">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="30"
+					 height="30">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 						  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
 				</svg>
 
-				<span>
+				<p class="rmr-reading-time">
 					<?php echo rmr_get_estimated_reading_time( get_the_content() ); ?> min de lectura
-				</span>
+				</p>
 			</div>
 		</div>
 	</div>
