@@ -2,14 +2,9 @@
 
 add_filter( 'excerpt_length', 'rmr_excerpt_length', 999 );
 add_action( 'rmr_generatepress_after_site_content', 'rmr_render_related_posts' );
-add_action( 'rmr_generatepress_after_site_content', 'rmr_render_giscus_template', 20 );
 
 function rmr_excerpt_length() : int {
 	return 25;
-}
-
-function rmr_render_giscus_template() {
-	include dirname( __DIR__ ) . '/public/templates/giscus.php';
 }
 
 /**

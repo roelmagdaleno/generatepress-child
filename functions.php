@@ -31,8 +31,6 @@ add_action( 'rmr_generatepress_after_site_content', 'generate_do_comments_templa
 add_action( 'init', 'rmr_disable_emojis' );
 add_action( 'wp_loaded', 'rmr_wp_loaded' );
 add_filter( 'run_wptexturize', '__return_false', 9999 );
-add_filter( 'comments_open', '__return_false' );
-add_filter( 'get_comments_number', '__return_false' );
 
 /**
  * Get the estimated reading time in minutes.
