@@ -12,22 +12,20 @@ add_filter( 'generate_typography_default_fonts', 'rmr_load_local_fonts', 10, 1 )
  *
  * @since 0.1.0
  * @since 0.1.1   Preload JetBrains Mono font.
+ * @since 0.4.2   Preload Readex Pro font for titles.
  */
 function rmr_preload_fonts() {
 	$fonts = array(
-		'inter-v7-latin-600.woff2',
-		'inter-v7-latin-700.woff2',
-		'inter-v7-latin-800.woff2',
-		'inter-v7-latin-regular.woff2',
+		'inter'      => 'inter-v7-latin-regular.woff2',
+		'readex-pro' => 'readex-pro-v9-latin-700.woff2',
 	);
 
-	foreach ( $fonts as $font ) {
-		echo rmr_get_font_link( 'inter', $font );
+	if ( is_single() && has_block( 'core/code' ) ) {
+		$fonts['jetbrains-mono'] = 'JetBrainsMono-Regular.woff2';
 	}
 
-	if ( is_single() && has_block( 'core/code' ) ) {
-//		echo rmr_get_font_link( 'monolisa', 'MonoLisa-Regular.woff2' );
-//		echo rmr_get_font_link( 'monolisa', 'MonoLisa-Bold.woff2' );
+	foreach ( $fonts as $font_family => $font ) {
+		echo rmr_get_font_link( $font_family, $font );
 	}
 }
 
@@ -45,8 +43,7 @@ function rmr_preload_fonts() {
  */
 function rmr_load_local_fonts( array $fonts ) : array {
 	$fonts[] = 'Inter';
-	$fonts[] = 'Poppins';
-	$fonts[] = 'JetBrains Mono';
+	$fonts[] = 'Readex Pro';
 
 	return $fonts;
 }

@@ -1,12 +1,11 @@
 code {
-    font-family: 'MonoLisa', serif !important;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+    color: #c7254e;
+    font-family: 'JetBrains Mono', serif !important;
     font-size: 1.25rem !important;
     font-weight: 600 !important;
-}
-
-code:before,
-code:after {
-    content: "`";
+    padding: 2px 4px;
 }
 
 pre code:before,
@@ -14,13 +13,9 @@ pre code:after {
     content: unset;
 }
 
-code:after {
-    content: "`";
-}
-
 code[class*="language-"],
 pre[class*="language-"] {
-    font-family: "MonoLisa", serif;
+    font-family: "JetBrains Mono", serif;
     font-size: 1.25rem !important;
     font-weight: 400 !important;
     line-height: 2;
