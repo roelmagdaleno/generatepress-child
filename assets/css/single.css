@@ -32,6 +32,9 @@ ul {
 
 .inside-article a {
     font-weight: 600;
+}
+
+.inside-article a:hover {
     text-decoration: underline;
 }
 
