@@ -28,14 +28,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( ! is_user_logged_in() ) {
 	?>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89993251-1"></script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RWJKXZ0P0L"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag('config', 'UA-89993251-1');
+		gtag('config', 'G-RWJKXZ0P0L');
 	</script>
 
 	<?php
