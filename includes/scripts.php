@@ -31,10 +31,21 @@ function rmr_load_custom_assets() {
 		);
 	}
 
-	if ( is_single() ) {
+	if ( ! is_single() ) {
+		return;
+	}
+
+	$styles = array(
+		'author-bio',
+		'post-meta',
+		'related-posts',
+		'single',
+	);
+
+	foreach ( $styles as $style ) {
 		wp_enqueue_style(
-			'rmr-single.css',
-			$uri . '/assets/css/single.css',
+			'rmr-' . $style . '.css',
+			$uri . '/assets/css/' . $style . '.css',
 			null,
 			RMR_VERSION
 		);

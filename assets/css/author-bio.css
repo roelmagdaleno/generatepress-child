@@ -1,0 +1,60 @@
+.rmr-author-bio {
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    margin-top: 3rem;
+    padding: 20px;
+}
+
+.rmr-author-bio__avatar {
+    margin-right: 20px;
+    width: 70px;
+}
+
+.rmr-author-bio__avatar img {
+    border-radius: 50%;
+    width: 120px;
+}
+
+.rmr-author-bio__bio {
+    flex: 1;
+}
+
+.rmr-author-bio__bio p {
+    margin: 0;
+}
+
+.rmr-author-bio__meta .entry-author__social {
+    margin-right: 0;
+}
+
+.entry-author__social a {
+    margin-right: 5px;
+    text-decoration: unset;
+}
+
+.entry-author__social a:last-child {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .rmr-author-bio__meta {
+        display: block;
+        text-align: center;
+    }
+
+    .rmr-author-bio__written-by {
+        display: block;
+        margin-bottom: 0.5em;
+    }
+
+    .rmr-author-bio__avatar img {
+        width: 150px;
+    }
+
+    .rmr-author-bio__avatar {
+        margin-right: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
